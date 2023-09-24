@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel = "stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/99210d93ee.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class = "container">
+
+  <div class = "right-half">
+    <div class = "search-container">
+        <input type="text" class="search-input" placeholder="Search for a Pokemon">
+        <i class="fas fa-search" id="search-button" onclick="searchPokemon()"></i>
+    </div>
+      <img class = "poke-ball" src = "pokeball.png" alt ="Poke ball">
+  </div>
+
+ <div class ="left-half">
+    <h1>Pokedex</h1>
+    <img id="pokemon-image" src = "Mimikyu.png">
+    <h2 id="pokemon-name">Mimikyu</h2>
+    <p id="pokemon-type">Ghost, Fairy</p>
+      <ul class = "stats-container">
+        <li id="pokemon-hp">HP: <span>55</span></li>
+        <li id= "pokemon-attack">Attack: <span>90</span></li>
+        <li id= "pokemon-defense">Defense: <span>80</span></li>
+        <li id="pokemon-speed">Speed: <span>96</span></li>
+      </ul>
+
+ </div>
+
+  </div>
+
+   </div>
+<script src = "main.js"></script>
+</body>
+</html>
