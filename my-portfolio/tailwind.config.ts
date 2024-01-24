@@ -1,16 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      container: {
-        center: true,
-        padding: '2rem',
-      },
+    container: {
+      center: true,
+      padding: '1rem',
     },
     extend: {
       colors: {
@@ -29,6 +27,7 @@ module.exports = {
         'light-4': '#5C5C7B',
       },
       spacing: {
+        5: '1.25rem',
         18: '4.5rem',
         15: '3.75rem',
         12: '3rem',
@@ -48,9 +47,9 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        Montserrat: ['Montserrat', 'sans-serif'],
       },
     },
   },
-
   plugins: [],
 };
