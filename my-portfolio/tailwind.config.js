@@ -14,7 +14,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'primary-500': '#4a90a2',
+        'bg': '#1f1112',
         'primary-600': '#5D5FEF',
         'secondary-500': '#FFB620',
         'off-white': '#D0DFFF',
@@ -29,7 +29,6 @@ module.exports = {
         'light-4': '#5C5C7B',
       },
       spacing: {
-        
         18: '4.5rem',
         15: '3.75rem',
         12: '3rem',
