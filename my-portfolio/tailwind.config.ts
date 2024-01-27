@@ -48,6 +48,7 @@ module.exports = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         Montserrat: ['Montserrat', 'sans-serif'],
+        Amatic: ['Amatic SC', 'sans-serif'],
       },
     },
   },

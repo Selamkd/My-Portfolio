@@ -5,8 +5,36 @@
   font-family: Barber;
   src: url(../Fonts/Barber-Outline.woff);
 }
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Exo+2&display=swap');
 
 body {
   background: #272727;
-  font-family: Barber;
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.tapered2 {
+  background-image: linear-gradient(
+    181deg,
+    #9bb9dd 0%,
+    #9bb9dd 50%,
+    transparent 54%,
+    transparent 100%
+  );
+}
+
+h2 {
+  span {
+    background-size: 100% 15%;
+    background-repeat: repeat-x;
+    background-position: left 0% bottom 8%;
+  }
+}
+#arrow-down {
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  cursor: pointer;
+}
+@keyframes bounce {
+  50% {
+    transform: translateY(-15px);
+  }
 }
