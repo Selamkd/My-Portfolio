@@ -6,7 +6,7 @@ const Portfolio = () => {
   return (
     <section className="bg-gray-900 w-[100%] h-screen flex flex-col items-center border border-yellow border-solid">
       <div className=" ml-5">
-        <Image src={heading} alt="portfolio text" width={400} height={80} />
+        <h1 className="text-9xl text-purple">PORTFOLIO</h1>
       </div>
       <div className="">
         <Image src={Avatar} alt="avatar pic" width={300} height={80} />
