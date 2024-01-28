@@ -3,7 +3,7 @@ import Image from 'next/image';
 import heading from '../public/Portfolio.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
-
+import Link from 'next/link';
 const Portfolio = () => {
   return (
     <section className="bg-gray-900 w-[100%] h-screen flex flex-col items-center ">
@@ -19,12 +19,13 @@ const Portfolio = () => {
           <span class="tapered2">Developer</span>
         </h2>
       </div>
-      <button
+      <Link
+        href="/about"
         id="arrow-down"
         className="flex items-center justify-center mr-3 mt-auto"
       >
         <Image src={Arrow} alt="avatar pic" width={50} height={60} />
-      </button>
+      </Link>
     </section>
   );
 };
