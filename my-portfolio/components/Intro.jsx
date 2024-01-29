@@ -44,9 +44,12 @@ const Intro = () => {
           <Image src={Mail} alt="avatar pic" width={40} height={30} />
         </Link>
       </div>
-      <div className="flex items-center justify-end w-full mt-auto">
+      <Link
+        href="/projects"
+        className="flex items-center justify-end w-full mt-auto"
+      >
         <Image src={ArrowRight} alt="avatar pic" width={100} height={80} />
-      </div>
+      </Link>
     </div>
   );
 };
