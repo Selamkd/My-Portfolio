@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import heading from '../public/Portfolio.png';
+import heading from '../public/portfolio.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Link from 'next/link';
