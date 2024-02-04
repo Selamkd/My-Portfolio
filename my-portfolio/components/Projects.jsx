@@ -14,7 +14,7 @@ const Projects = () => {
         <Image src={Avatar} alt="avatar pic" width={300} height={80} />
       </div>
       <div className="flex my-3  leading-6 text-white flex-col items-center justify-center">
-        <h1 className="font-Amatic mb-2">SELAM ARARSA</h1>
+        <h1 className=" mb-2">SELAM ARARSA</h1>
         <h2>
           <span class="tapered2">Developer</span>
         </h2>

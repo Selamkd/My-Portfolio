@@ -1,16 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: Barber;
-  src: url(../Fonts/Barber-Outline.woff);
-}
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Exo+2&display=swap');
 
 body,
 html {
   background: #272727;
-  font-family: 'Amatic SC', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   overflow: hidden;
 }
 
