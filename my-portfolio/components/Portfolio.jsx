@@ -6,7 +6,7 @@ import Arrow from '../public/Arrow-button.png';
 import Link from 'next/link';
 const Projects = () => {
   return (
-    <section className="bg-gray-900 w-[100%] h-screen flex flex-col items-center ">
+    <section className=" w-[100%] h-screen flex flex-col items-center ">
       <div className=" ml-5">
         <Image src={heading} alt="avatar pic" width={400} height={90} />
       </div>
