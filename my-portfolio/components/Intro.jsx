@@ -11,7 +11,7 @@ import Me from '../public/me.png';
 import Link from 'next/link';
 const Intro = () => {
   return (
-    <div className=" bg-[#151515] w-[100%] h-screen flex flex-col items-center">
+    <div className=" w-[100%] h-screen flex flex-col items-center">
       <div className="flex justify-between  w-full">
         <Image src={Bluewave} alt="avatar pic" width={80} height={60} />
         <Image src={Cherry} alt="avatar pic" width={80} height={60} />

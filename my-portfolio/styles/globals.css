@@ -7,11 +7,9 @@
 body {
   font-family: 'IBM Plex Sans', 'Montserrat', sans-serif;
 }
-body,
-html {
-  background: #0000;
-
-  overflow: hidden;
+body {
+  background-color: #130f40;
+  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
 }
 
 .tapered2 {
