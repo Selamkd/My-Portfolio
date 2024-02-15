@@ -1,65 +1,93 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import heading from '../public/portfolio.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Icon from '../public/Name-tag.png';
-import { ReactComponent as Heart } from '../public/Heart.svg';
+import sun from '../public/sun.png';
+import Heart from '../public/heart.png';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 import { motion } from 'framer-motion';
-const Projects = () => {
+const LandingPage = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (e.deltaY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+    console.log(scrolled);
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [scrolled]);
   return (
-    // <section className=" w-[100%] h-screen flex flex-col items-center ">
-    //   <div className=" ml-5">
-    //     <Image src={heading} alt="avatar pic" width={400} height={90} />
-    //   </div>
-    //   <div className="">
-    //     <Image src={Avatar} alt="avatar pic" width={300} height={80} />
-    //   </div>
-    //   <div className="flex my-3  leading-6 text-white flex-col items-center justify-center">
-    //     <h1 className="font-Amatic mb-2">SELAM ARARSA</h1>
-    //     <h2>
-    //       <span class="tapered2">Developer</span>
-    //     </h2>
-    //   </div>
-    //   <Link
-    //     href="/about"
-    //     id="arrow-down"
-    //     className="flex items-center justify-center mr-3 mt-auto"
-    //   >
-    //     <Image src={Arrow} alt="avatar pic" width={50} height={60} />
-    //   </Link>
-    // </section>
-    <section className="w-[100%] flex flex-col h-screen justify-center items-center >">
+    <section className="w-full flex flex-col h-screen justify-center items-center relative">
+      {/* Sun icon */}
+      {scrolled ? (
+        <div className="absolute top-0 right-0">
+          <Image src={sun} alt="sun-icon" width={150} height={150} />
+        </div>
+      ) : null}
+
+      {/* name, h3, icons */}
       <motion.div
-        whileTap={{
-          x: -120,
-          y: -171,
-        }}
+        initial="hidden"
+        animate={scrolled ? { scale: 0.5, x: -370, y: -291 } : { scale: 1 }}
         className="flex items-center justify-center"
       >
+        <motion.div animate={scrolled ? { opacity: 0 } : { opacity: 1 }}>
+          {' '}
+          <Image
+            src={Heart}
+            className="self-start mr-10"
+            alt="heart"
+            width={100}
+            height={100}
+          />
+        </motion.div>
+
         <h1 className="text-9xl text-purple">Selam Ararsa</h1>
         <div className="mb-20">
           <Image src={Icon} alt="icon" width={100} height={100} />
         </div>
       </motion.div>
-      <h3 className="text-2xl text-blue-100">Full-stack developer</h3>
-      {/* <motion.svg
-        drag
-        dragConstraints={{
-          top: -50,
-          left: -50,
-          right: 50,
-          bottom: 50,
-        }}
-        width={300}
-        height={80}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 300 80" // set the viewBox to the size of the heart
-      > */}
-      {/* <Heart /> */}
-      {/* </motion.svg> */}
+      <motion.div
+        initial="hidden"
+        animate={scrolled ? { scale: 1, x: -365, y: -350 } : { scale: 1 }}
+      >
+        <h3 className="text-2xl text-blue-100">Full-stack developer</h3>
+      </motion.div>
+      <motion.div
+        initial={{ x: 100, y: 340 }}
+        animate={scrolled ? { scale: 1.3, x: -560, y: -150 } : { scale: 1 }}
+        className="absolute bottom-5 right-0"
+      >
+        <Image src={Avatar} alt="avatar" width={400} height={350} />
+      </motion.div>
+      {/* Arrow */}
+      <motion.div
+        initial="hidden"
+        animate={
+          scrolled
+            ? { scale: 2, x: -100, y: -50, opacity: 1 }
+            : { scale: 1, opacity: 0 }
+        }
+        className="absolute  bottom-0 right-0"
+      >
+        {/* <FontAwesomeIcon id="landing-arrow" icon={faPaperPlane} /> */}
+      </motion.div>
     </section>
   );
 };
-export default Projects;
+export default LandingPage;
