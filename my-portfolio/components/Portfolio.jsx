@@ -36,14 +36,16 @@ const LandingPage = () => {
       {/* Sun icon */}
       {scrolled ? (
         <div className="absolute top-0 right-0">
-          <Image src={sun} alt="sun-icon" width={150} height={150} />
+          <Image src={sun} alt="sun-icon" width={250} height={250} />
         </div>
       ) : null}
 
       {/* name, h3, icons */}
       <motion.div
         initial="hidden"
-        animate={scrolled ? { scale: 0.5, x: -370, y: -291 } : { scale: 1 }}
+        animate={
+          scrolled ? { scale: 0.5, x: '-40%', y: '-150%' } : { scale: 1 }
+        }
         className="flex items-center justify-center"
       >
         <motion.div animate={scrolled ? { opacity: 0 } : { opacity: 1 }}>
@@ -57,35 +59,39 @@ const LandingPage = () => {
           />
         </motion.div>
 
-        <h1 className="text-9xl text-purple">Selam Ararsa</h1>
+        <h1 className="text-9xl text-purple text-center">Selam Ararsa</h1>
         <div className="mb-20">
           <Image src={Icon} alt="icon" width={100} height={100} />
         </div>
       </motion.div>
       <motion.div
         initial="hidden"
-        animate={scrolled ? { scale: 1, x: -365, y: -350 } : { scale: 1 }}
+        animate={
+          scrolled ? { scale: 1, x: '-170%', y: '-1000%' } : { scale: 1 }
+        }
       >
-        <h3 className="text-2xl text-blue-100">Full-stack developer</h3>
+        <h3 className="text-2xl text-blue-100 text-center">
+          Full-stack developer
+        </h3>
       </motion.div>
       <motion.div
-        initial={{ x: 100, y: 340 }}
-        animate={scrolled ? { scale: 1.3, x: -560, y: -150 } : { scale: 1 }}
-        className="absolute bottom-5 right-0"
+        initial={{ x: '5%', y: '25%' }}
+        animate={
+          scrolled ? { scale: 1.3, x: '-150%', y: '-45%' } : { scale: 1 }
+        }
+        className="absolute bottom-5 right-0  p-2 rounded-lg"
       >
         <Image src={Avatar} alt="avatar" width={400} height={350} />
       </motion.div>
       {/* Arrow */}
       <motion.div
         initial="hidden"
-        animate={
-          scrolled
-            ? { scale: 2, x: -100, y: -50, opacity: 1 }
-            : { scale: 1, opacity: 0 }
-        }
-        className="absolute  bottom-0 right-0"
+        animate={scrolled ? { scale: 1, opacity: 1 } : { scale: 1, opacity: 0 }}
+        className="absolute  bottom-0 right-45"
       >
-        {/* <FontAwesomeIcon id="landing-arrow" icon={faPaperPlane} /> */}
+        <svg class="arrows">
+          <path stroke-linecap="round" class="a1" d="M0 0 L20 22 L40 0"></path>
+        </svg>
       </motion.div>
     </section>
   );
