@@ -66,6 +66,7 @@ h2 {
   80% {
     opacity: 1;
     transform: translateY(50px);
+    color: #22b573;
   }
   100% {
     opacity: 0;
@@ -81,6 +82,7 @@ h2 {
   80% {
     opacity: 1;
     transform: translateY(50px);
+    color: #22b573;
   }
   100% {
     opacity: 0;
@@ -90,5 +92,5 @@ h2 {
 
 .arrows path.a1 {
   animation-delay: -0.5s;
-  -webkit-animation-delay: -0.5s; /* Safari and Chrome */
+  -webkit-animation-delay: -0.5s;
 }
