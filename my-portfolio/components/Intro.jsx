@@ -13,6 +13,7 @@ const Intro = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:items-center w-full h-screen">
       {/* Image and social links */}
+      // taking a break today
       <div className="md:flex md:flex-col md:items-center md:justify-center">
         <div className="flex justify-between w-full mb-4"></div>
         <div className="mb-4">
