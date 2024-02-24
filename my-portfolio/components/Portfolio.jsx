@@ -63,7 +63,7 @@ const LandingPage = () => {
           />
         </motion.div>
 
-        <h1 className="text-9xl text-purple text-center">Selam Ararsa</h1>
+        <h1 id="heading-text" className="text-9xl text-purple text-center">Selam Ararsa</h1>
         <div className="mb-20">
           <Image src={Icon} alt="icon" width={100} height={100} />
         </div>

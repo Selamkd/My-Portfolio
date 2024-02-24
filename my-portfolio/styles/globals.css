@@ -1,16 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
 
-body {
-  font-family: 'IBM Plex Sans', 'Montserrat', sans-serif;
+@font-face {
+  font-family:Chromium;
+  src: url(../Fonts/Chromium/ChromiumReg.otf );
 }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(../Fonts/cooper-hewitt/CooperHewitt-Medium.otf);
+
+}
+
 body {
   background-color: #21252b;
 }
 
+h1 {
+  font-family: Chromium;
+  font-size: 3rem;
+  color: #9bb9dd;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  span {
+    background-size: 100% 15%;
+    background-repeat: repeat-x;
+    background-position: left 0% bottom 8%;
+  }
+}
 .tapered2 {
   background-image: linear-gradient(
     181deg,
@@ -27,6 +48,17 @@ h2 {
     background-repeat: repeat-x;
     background-position: left 0% bottom 8%;
   }
+}
+h3{
+  font-family: CooperHewitt;
+  font-size: 8rem;
+  color: #9bb9dd;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
 }
 #arrow-down {
   animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
