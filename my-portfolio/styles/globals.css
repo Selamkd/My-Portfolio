@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Permanent+Marker&display=swap');
+
 @font-face {
   font-family:Chromium;
   src: url(../Fonts/Chromium/chromiumoned.ttf );
@@ -13,12 +15,16 @@
 
 }
 
+#lists{
+  font-family: Chromium;
+}
 body {
   background-color: #21252b;
 }
 
 h1 {
-  font-family:Chromium;
+  font-family: "Concert One"!important;
+  font-weight: 400;
   font-size: 3rem;
   color: #9bb9dd;
   opacity:0.9;

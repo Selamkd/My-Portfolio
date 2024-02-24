@@ -1,12 +1,12 @@
 import Link from 'next/link';
 const Header = () => {
   return (
-    <header class="top-0 sm:top-4 rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
+    <header class="top-0 sm:top-4  rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
       <nav class="w-full flex justify-around items-center">
         <div class="flex items-center space-x-8">
-          <div class="hidden items-center sm:flex">
+          <div id="links" class="  hidden items-center sm:flex">
             <Link
-              class="flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-800 dark:text-gray-400 font-medium px-3 py-2  w-fit"
+              class="flex  items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-800 dark:text-gray-400 font-medium px-3 py-2  w-fit"
               href="/about "
             >
               About me

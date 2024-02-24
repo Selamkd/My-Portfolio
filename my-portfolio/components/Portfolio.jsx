@@ -52,7 +52,7 @@ const LandingPage = () => {
         <motion.div
           animate={scrolled ? { opacity: 0 } : { opacity: 1 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          className='font- Montserrat'
+ 
         >
           {' '}
           <Image
@@ -63,9 +63,9 @@ const LandingPage = () => {
             height={100}
           />
         </motion.div>
-{scrolled ?       <h1 id="heading-text"  className="font-CooperHewitt"   >Selam Ararsa</h1>: 
-<Image src={heading} alt="heading" width={1100} height={181} />
-      }
+     <h1 id="heading-text"  className="font-bold text-purple text-9xl"   >Selam Ararsa</h1>: 
+{/* <Image src={heading} alt="heading" width={1100} height={181} /> */}
+      
         <div className="mb-20">
           <Image src={Icon} alt="icon" width={100} height={100} />
         </div>

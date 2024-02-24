@@ -50,6 +50,7 @@ module.exports = {
         Montserrat: ['Montserrat', 'sans-serif'],
         Amatic: ['Amatic SC', 'sans-serif'],
         CooperHewitt:[('../my-portfolio/Fonts/cooper-hewitt/CooperHewitt-Medium.otf'), 'sans-serif'],
+        Chromium: [('../my-portfolio/Fonts/Chromium/chromiumoned.ttf'), 'sans-serif'],
       },
     },
   },
