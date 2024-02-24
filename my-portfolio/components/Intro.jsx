@@ -33,7 +33,7 @@ const Intro = () => {
       </div>
       {/* Text and Arrow */}
       <div className="md:px-3">
-        <h1 className="font-bold text-purple text-2xl">HELLO,</h1>
+        <h1 className=" text-purple text-2xl">HELLO,</h1>
         <p className="text-off-white px-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

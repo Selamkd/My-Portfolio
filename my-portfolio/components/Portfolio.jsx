@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import heading from '../public/portfolio.png';
+import heading from '../public/chromium.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Icon from '../public/Name-tag.png';
@@ -52,6 +52,7 @@ const LandingPage = () => {
         <motion.div
           animate={scrolled ? { opacity: 0 } : { opacity: 1 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
+          className='font- Montserrat'
         >
           {' '}
           <Image
@@ -62,8 +63,9 @@ const LandingPage = () => {
             height={100}
           />
         </motion.div>
-
-        <h1 id="heading-text" className="text-9xl text-purple text-center">Selam Ararsa</h1>
+{scrolled ?       <h1 id="heading-text"  className="font-CooperHewitt"   >Selam Ararsa</h1>: 
+<Image src={heading} alt="heading" width={1100} height={181} />
+      }
         <div className="mb-20">
           <Image src={Icon} alt="icon" width={100} height={100} />
         </div>

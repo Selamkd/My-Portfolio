@@ -4,7 +4,7 @@
 
 @font-face {
   font-family:Chromium;
-  src: url(../Fonts/Chromium/ChromiumReg.otf );
+  src: url(../Fonts/Chromium/chromiumoned.ttf );
 }
 
 @font-face {
@@ -18,9 +18,10 @@ body {
 }
 
 h1 {
-  font-family: Chromium;
+  font-family:Chromium;
   font-size: 3rem;
   color: #9bb9dd;
+  opacity:0.9;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
@@ -54,10 +55,9 @@ h3{
   font-size: 8rem;
   color: #9bb9dd;
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+
 
 }
 #arrow-down {

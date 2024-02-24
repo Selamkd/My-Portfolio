@@ -45,11 +45,12 @@ module.exports = {
         465: '465px',
         800: '800px',
       },
-      // fontFamily: {
-      //   inter: ['Inter', 'sans-serif'],
-      //   Montserrat: ['Montserrat', 'sans-serif'],
-      //   Amatic: ['Amatic SC', 'sans-serif'],
-      // },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        Montserrat: ['Montserrat', 'sans-serif'],
+        Amatic: ['Amatic SC', 'sans-serif'],
+        CooperHewitt:[('../my-portfolio/Fonts/cooper-hewitt/CooperHewitt-Medium.otf'), 'sans-serif'],
+      },
     },
   },
   plugins: [],
