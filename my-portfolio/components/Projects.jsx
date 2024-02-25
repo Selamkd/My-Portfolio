@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import heading from '../public/portfolio.png';
+import heading from '../public/mobile.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Icon from '../public/sparkle.png';
 const Projects = () => {
+
 
     const [current, setCurrent] = useState(1); 
     const [next, setNext] = useState(1);
@@ -42,59 +45,66 @@ const Projects = () => {
       <div className="flex__container flex--pikachu flex--active" data-slide="1">
         <div className="flex__item flex__item--left">
           <div className="flex__content">
-            <p className="text--sub">Pokemon Gen I</p>
-            <h1 className="text--big">Pikachu</h1>
-            <p className="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p>
+            <p className="text--sub">PROJECTS</p>
+            <div className="flex items-center justify-center">
+            <h1 className="text--big mr-20">Attract</h1>
+            <motion.div className="" animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: 3 }}>
+  <Image src={Icon} alt="icon" className="" width={297} height={290} />
+</motion.div>
+              </div>
+           
+            <p className="text--normal">A mindfulness app with breathing exercise, affirmations and a journaling feature.</p>
+            <div className="mt-3 ">
+            <button  className="btn">Live</button>
+            <button className="btn ">Repo</button>
+            </div>
           </div>
-          <p className="text__background">Pikachu</p>
+          <p className="text__background">00</p>
         </div>
         <div className="flex__item flex__item--right"></div>
-        <img className="pokemon__img" src="https://s4.postimg.org/fucnrdeq5/pikachu.png" alt="Pikachu" />
+     
       </div>
       <div className="flex__container flex--piplup animate--start" data-slide="2">
         <div className="flex__item flex__item--left">
           <div className="flex__content">
-            <p className="text--sub">Pokemon Gen IV</p>
-            <h1 className="text--big">Piplup</h1>
-            <p className="text--normal">Piplup is the Water-type Starter Pokémon of the Sinnoh region. It was introduced in Generation IV. Piplup has a strong sense of self-esteem. It seldom accepts food that people give because of its pride.</p>
+            {/* <p className="text--sub">PROJECTS</p> */}
+            <h1 className="text--big">ChampSelect</h1>
+            <p className="text--normal">This project is a web app that uses a REST API to provide League of Legends fans with a distinctive quiz experience. Regardless of your level of experience as a summoner or where you are on the rift, this quiz will help you identify your ideal champion based on your preferences and playstyle.</p>
+            <div className="mt-3 ">
+            <button  className="btn">Live</button>
+            <button className="btn ">Repo</button>
+            </div>
           </div>
-          <p className="text__background">Piplup</p>
+          <p className="text__background">02</p>
         </div>
         <div className="flex__item flex__item--right"></div>
-        <img className="pokemon__img" src="https://s4.postimg.org/sa9dl4825/pilup.png" alt="Piplup" />
+  
       </div>
       <div className="flex__container flex--blaziken animate--start" data-slide="3">
         <div className="flex__item flex__item--left">
           <div className="flex__content">
-            <p className="text--sub">Pokemon Gen III</p>
-            <h1 className="text--big">Blaziken</h1>
+            <p className="text--sub">Not sure</p>
+            <h1 className="text--big">Hackafun</h1>
             <p className="text--normal">Blaziken is the Fire/Fighting-type Starter Pokémon of the Hoenn region, introduced in Generation III. Blaziken is a large, bipedal, humanoid bird-like Pokémon that resembles a rooster.</p>
+            <div className="mt-3 ">
+            <button  className="btn">Live</button>
+            <button className="btn ">Repo</button>
+            </div>
+           
           </div>
-          <p className="text__background">Blaziken</p>
+          <p className="text__background">03</p>
         </div>
-        <div className="flex__item flex__item--right"></div>
-        <img className="pokemon__img" src="https://s4.postimg.org/6795hnlql/blaziken.png" alt="Blaziken" />
-      </div>
-      <div className="flex__container flex--dialga animate--start" data-slide="4">
-        <div className="flex__item flex__item--left">
-          <div className="flex__content">
-            <p className="text--sub">Pokemon Gen IV</p>
-            <h1 className="text--big">Dialga</h1>
-            <p className="text--normal">Dialga is a Steel/Dragon-type Legendary Pokémon. Dialga is a sauropod-like Pokémon. It is mainly blue with some gray, metallic portions, such as its chest plate, which has a diamond in the center. It also has various, light blue lines all over its body.</p>
-          </div>
-          <p className="text__background">Dialga</p>
-        </div>
-        <div className="flex__item flex__item--right"></div>
-        <img className="pokemon__img" src="https://s4.postimg.org/43yq9zlxp/dialga.png" alt="Dialga" />
+        <div className=""></div>
+        {/* <Image className="pokemon__img" src={heading} alt="Piplup" /> */}
       </div>
     </div>
-
+  
     {/* Navigation */}
     <div className="slider__navi">
       <a href="#" className={`slide-nav ${current === 1 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 1)}>pikachu</a>
       <a href="#" className={`slide-nav ${current === 2 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 2)}>piplup</a>
       <a href="#" className={`slide-nav ${current === 3 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 3)}>blaziken</a>
-      <a href="#" className={`slide-nav ${current === 4 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 4)}>dialga</a>
+      {/* <a href="#" className={`slide-nav ${current === 4 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 4)}>dialga</a> */}
     </div>
   </>
    

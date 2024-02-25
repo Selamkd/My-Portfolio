@@ -53,8 +53,8 @@ const Intro = () => {
       </div>
       {/* Text and Arrow */}
       <div  className="md:px-3 w-[80%] ">
-        <h1  id="greet" className=" text-purple font- CooperHewitt text-5xl text-center mb-5">Hello 👋🏾</h1>
-        <p className="text-light-4 text-3xl e px-2 font-CooperHewitt">
+        <h1  id="greet" className="text--big text-3xl!important text-center mb-5">Hello 👋🏾</h1>
+        <p className="text-light-4 text--normal text-4xl e px-2 font-CooperHewitt">
         A recent graduate of the School of Code bootcamp, I am a highly motivated and creative individual with a knack for problem-solving. I’m now looking for the first step in my career as a Software Developer. I am seeking a role where I have the opportunity to work hard, learn and put my great communication skills to the test.
         </p>
         <div class="carousel">

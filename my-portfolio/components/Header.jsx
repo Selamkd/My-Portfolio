@@ -1,7 +1,7 @@
 import Link from 'next/link';
 const Header = () => {
   return (
-    <header class="top-0 sm:top-4  rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
+    <header class="top-0 text--small sm:top-4  rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
       <nav class="w-full flex justify-around items-center">
         <div class="flex items-center space-x-8">
           <div id="links" class="  hidden items-center sm:flex">
