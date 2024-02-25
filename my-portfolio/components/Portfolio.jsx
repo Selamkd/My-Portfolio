@@ -7,6 +7,7 @@ import Icon from '../public/Name-tag.png';
 import sun from '../public/sun.png';
 import Heart from '../public/heart.png';
 import Link from 'next/link';
+import { getPositionAvatar } from './helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -57,18 +58,18 @@ const LandingPage = () => {
           {' '}
           <Image
             src={Heart}
-            className="self-start mr-10"
+            className="self-start mr-10 mb-7"
             alt="heart"
-            width={100}
+            width={130}
             height={100}
           />
         </motion.div>
-     <h1 id="heading-text"  className="font-bold text-purple text-9xl"   >Selam Ararsa</h1>: 
-{/* <Image src={heading} alt="heading" width={1100} height={181} /> */}
+    {/* {scrolled ? <h1 id="heading-text"  className="font-bold text-purple text-9xl"   >Selam Ararsa</h1>:  */}
+ <Image src={heading} alt="heading" width={1100} height={181} /> 
       
-        <div className="mb-20">
-          <Image src={Icon} alt="icon" width={100} height={100} />
-        </div>
+ <motion.div className="mb-10" animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: 3 }}>
+  <Image src={Icon} alt="icon" className="mb-10" width={100} height={100} />
+</motion.div>
       </motion.div>
       <motion.div
         initial="hidden"
@@ -84,10 +85,10 @@ const LandingPage = () => {
       <motion.div
         initial={{ x: '5%', y: '85%' }}
         animate={
-          scrolled ? { scale: 1.3, x: '-150%', y: '-45%' } : { scale: 1 }
+          scrolled ? { scale: 1.3, x: '-170%', y: '-45%' } : { scale: 1 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute bottom-0 right-0  p-2 rounded-lg"
+        className="absolute bottom-0 right-0  p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
       >
         <Image src={Avatar} alt="avatar" width={400} height={350} />
       </motion.div>

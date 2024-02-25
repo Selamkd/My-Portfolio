@@ -47,10 +47,10 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        Montserrat: ['Montserrat', 'sans-serif'],
+        Montserrat: ['Montserrat'],
         Amatic: ['Amatic SC', 'sans-serif'],
-        CooperHewitt:[('../my-portfolio/Fonts/cooper-hewitt/CooperHewitt-Medium.otf'), 'sans-serif'],
-        Chromium: [('../my-portfolio/Fonts/Chromium/chromiumoned.ttf'), 'sans-serif'],
+        CooperHewitt:[('../my-portfolio/Fonts/cooper-hewitt/CooperHewitt-Medium.otf'), ''],
+       Chromium : [('../my-portfolio/Fonts/Chromium/chromiumoned.ttf'), 'sans-serif'],
       },
     },
   },

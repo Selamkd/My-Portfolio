@@ -9,7 +9,27 @@ import YellowArrow from '../public/yellow-arrow.png';
 import ArrowRight from '../public/Arrow-right.png';
 import Me from '../public/me.png';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 const Intro = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (e.deltaY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+    console.log(scrolled);
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [scrolled]);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:items-center w-full h-screen">
       {/* Image and social links */}
@@ -32,21 +52,40 @@ const Intro = () => {
         </div>
       </div>
       {/* Text and Arrow */}
-      <div className="md:px-3">
-        <h1 className=" text-purple text-2xl">HELLO,</h1>
-        <p className="text-off-white px-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
+      <div  className="md:px-3 w-[80%] ">
+        <h1  id="greet" className=" text-purple font- CooperHewitt text-5xl text-center mb-5">Hello 👋🏾</h1>
+        <p className="text-light-4 text-3xl e px-2 font-CooperHewitt">
+        A recent graduate of the School of Code bootcamp, I am a highly motivated and creative individual with a knack for problem-solving. I’m now looking for the first step in my career as a Software Developer. I am seeking a role where I have the opportunity to work hard, learn and put my great communication skills to the test.
         </p>
-        <Link
-          href="/projects"
-          className="flex items-center justify-end mt-auto"
-        >
-          <Image src={ArrowRight} alt="avatar pic" width={100} height={80} />
-        </Link>
+        <div class="carousel">
+  <div class="logos"></div>
+  <div class="mask"></div>
+</div>
+
+<div class="carousel">
+  <div class="logos"></div>
+  <div class="mask"></div>
+</div>
+        {/* Arrow */}
+        <motion.div
+      
+      animate={{ scale: 1, opacity: 1 }}
+      className="flex justify-center items-center"
+   
+    >
+      <Link href="/projects
+      ">
+        <svg class="arrows">
+          <path
+            stroke-linecap="round"
+            class="a1"
+            d="M0 0 L20 22 L40 0"
+          ></path>
+        </svg>
+      </Link>
+    </motion.div>
       </div>
+    
     </div>
   );
 };
