@@ -263,7 +263,11 @@ h3{
 }
 
 .flex--piplup .flex__item--right {
-	background: #d3eaef;
+	background-image:url('../public/champ-bg.png');
+	background-color: rgb(236,230,255,0.8);
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 /* Pikachu */
@@ -273,7 +277,14 @@ h3{
 }
 
 .flex--pikachu .flex__item--right {
-	background: 	 rgba(255, 255, 255, 0.8);;
+	background-image:url('../public/attract-bg2.png');
+	background-color: #f4ecc5;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	
+
 }
 
 /* Blaziken */
@@ -283,28 +294,36 @@ h3{
 }
 
 .flex--blaziken .flex__item--right {
-	background:  #21252b;	
+	background-image:url('../public/hackafun.png');
+	background-color: #7798BC;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 /* Dialga */
 
-.flex--dialga .flex__item--left {
+/* .flex--dialga .flex__item--left {
 	background: #21252b;
-}
+} */
 
-.flex--dialga .flex__item--right {
-	background: 	 rgba(255, 255, 255, 0.8);;
-}
+/* .flex--dialga .flex__item--right {
+	background-image:url('../public/Attract-bg.png');
+	background-color: #a7bcbb;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+} */
 
 /* Zekrom */
 
-.flex--zekrom .flex__item--left {
+/* .flex--zekrom .flex__item--left {
 	background: #424242;
 }
 
 .flex--zekrom .flex__item--right {
 	background: 	 rgba(255, 255, 255, 0.8);;
-}
+} */
 
 .flex__content {
 	margin-left: 80px;
@@ -314,7 +333,7 @@ h3{
 	transition: transform 0.2s linear 0.2s, opacity 0.1s linear 0.2s;
 }
 
-.pokemon__img {
+/* .pokemon__img {
 	position: absolute;
 	bottom: 20px;
 	right: 15%;
@@ -322,7 +341,7 @@ h3{
 	opacity: 1;
 	transform: translate3d(0,0,0);
 	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
-}
+} */
 
 /* Animate-START point */
 
@@ -351,10 +370,10 @@ h3{
 	opacity: 0;
 }
 
-.flex__container.animate--end .pokemon__img {
+/* .flex__container.animate--end .pokemon__img {
 	transform: translate3d(200px,0,0);
 	opacity: 0;
-}
+} */
 
 .btn{
 

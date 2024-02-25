@@ -48,8 +48,8 @@ const Projects = () => {
             <p className="text--sub">PROJECTS</p>
             <div className="flex items-center justify-center">
             <h1 className="text--big mr-20">Attract</h1>
-            <motion.div className="" animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: 3 }}>
-  <Image src={Icon} alt="icon" className="" width={297} height={290} />
+            <motion.div className="" animate={{ opacity: [1, 0, 1]}} transition={{ duration: 1, repeat: 3 }}>
+  <Image src={Icon} alt="icon" className="absolute" width={117} height={122} />
 </motion.div>
               </div>
            
@@ -85,7 +85,7 @@ const Projects = () => {
           <div className="flex__content">
             <p className="text--sub">Not sure</p>
             <h1 className="text--big">Hackafun</h1>
-            <p className="text--normal">Blaziken is the Fire/Fighting-type Starter Pokémon of the Hoenn region, introduced in Generation III. Blaziken is a large, bipedal, humanoid bird-like Pokémon that resembles a rooster.</p>
+            <p className="text--normal">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</p>
             <div className="mt-3 ">
             <button  className="btn">Live</button>
             <button className="btn ">Repo</button>
@@ -94,7 +94,7 @@ const Projects = () => {
           </div>
           <p className="text__background">03</p>
         </div>
-        <div className=""></div>
+        <div className="flex__item flex__item--right"></div>
         {/* <Image className="pokemon__img" src={heading} alt="Piplup" /> */}
       </div>
     </div>
