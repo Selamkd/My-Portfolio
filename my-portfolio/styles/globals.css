@@ -71,6 +71,7 @@ h3 {
   animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
   cursor: pointer;
 }
+
 @keyframes bounce {
   50% {
     transform: translateY(-15px);
@@ -195,16 +196,21 @@ h3 {
   font-size: 4em;
   font-weight: 700;
   line-height: 110px;
-  margin-left: -8px;
 }
 
 .text--normal {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 22px;
-  margin-top: 25px;
+  margin-top: 0;
+  margin-bottom: 1.1rem;
 }
-
+.text-4xl {
+  color: rgba(255, 255, 255, 0.2);
+}
+#tailwind-icon {
+  font-size: 7rem;
+}
 .text__background {
   font-family: 'Poppins', sans-serif;
   position: absolute;
@@ -392,7 +398,11 @@ h3 {
 }
 .btn:hover {
   color: #fff;
-  background-color: #616467;
+  border: 1px solid #e5ccfd;
+}
+span {
+  text-decoration-skip-ink: none;
+  height: 1.5em;
 }
 #arrow-container {
   position: absolute;
