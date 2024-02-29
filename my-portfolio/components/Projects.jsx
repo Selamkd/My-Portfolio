@@ -7,8 +7,11 @@ import { faJs, faReact } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 import { SiNextdotjs } from 'react-icons/si';
 import { RiSupabaseLine } from 'react-icons/ri';
+import { SiPlaywright } from 'react-icons/si';
+import { FaCss3 } from 'react-icons/fa';
+import { FaHtml5 } from 'react-icons/fa';
 import Icon from '../public/sparkle.png';
-
+import { SiJest } from 'react-icons/si';
 const Projects = () => {
   const [current, setCurrent] = useState(1);
   const [next, setNext] = useState(1);
@@ -42,6 +45,9 @@ const Projects = () => {
     let nextPage = current + 1;
     if (nextPage > 3) nextPage = 1;
     setNext(nextPage);
+    if (current === 3) {
+      location.href = '/contact';
+    }
   };
 
   useEffect(() => {
@@ -170,19 +176,10 @@ const Projects = () => {
               </div>
               <div className="flex items-center justify-start ml-4 mt-5">
                 <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                <svg
-                  class="w-10 h-10 text-4xl mr-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  id="tailwind-icon"
-                >
-                  <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                </svg>
-                <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
+                <FaCss3 className="text-4xl mr-5 h-8 w-8" />
+                <FaHtml5 className="text-4xl mr-5 h-8 w-8" />
+                <SiJest className="text-4xl mr-5 h-8 w-8" />
+                <SiPlaywright className="text-4xl mr-5 h-10 w-10" />
               </div>
             </div>
 
@@ -255,6 +252,7 @@ const Projects = () => {
                 </svg>
                 <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
                 <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
+                <SiJest className="text-4xl mr-5 h-8 w-8" />
               </div>
             </div>
 
