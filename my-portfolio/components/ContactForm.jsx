@@ -34,8 +34,106 @@ const ContactForm = () => {
           </div>
           <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             <div class="w-full md:w-96 md:max-w-full mx-auto">
+              <div className="love flex justify-end mb-10">
+                <input id="switch" type="checkbox" />
+                <label class="love-heart" for="switch">
+                  <i class="left"></i>
+                  <i class="right"></i>
+                  <i class="bottom"></i>
+                  <div class="round"></div>
+                </label>
+              </div>
               <div class="p-6 border border-gray-300 sm:rounded-md">
-                <h1 class="text--big text-neutral-300">Form goes here</h1>
+                <h1 class="text--normal text-neutral-300">Form goes here</h1>
+
+                <form>
+                  <div class="mb-6">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      class="
+                        w-full
+                        rounded
+                        py-3
+                        px-[14px]
+                        text-body-color text-base
+                        border border-[f0f0f0]
+                        outline-none
+                        focus-visible:shadow-none
+                        focus:border-primary
+                        "
+                    />
+                  </div>
+                  <div class="mb-6">
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      class="
+                        w-full
+                        rounded
+                        py-3
+                        px-[14px]
+                        text-body-color text-base
+                        border border-[f0f0f0]
+                        outline-none
+                        focus-visible:shadow-none
+                        focus:border-primary
+                        "
+                    />
+                  </div>
+                  <div class="mb-6">
+                    <input
+                      type="text"
+                      placeholder="Your Phone"
+                      class="
+                        w-full
+                        rounded
+                        py-3
+                        px-[14px]
+                        text-body-color text-base
+                        border border-[f0f0f0]
+                        outline-none
+                        focus-visible:shadow-none
+                        focus:border-primary
+                        "
+                    />
+                  </div>
+                  <div class="mb-6">
+                    <textarea
+                      rows="6"
+                      placeholder="Your Message"
+                      class="
+                        w-full
+                        rounded
+                        py-3
+                        px-[14px]
+                        text-body-color text-base
+                        border border-[f0f0f0]
+                        resize-none
+                        outline-none
+                        focus-visible:shadow-none
+                        focus:border-primary
+                        "
+                    ></textarea>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      class="
+                        w-full
+                        text-white
+                        bg-primary
+                        rounded
+                        border border-primary
+                        p-3
+                        transition
+                        hover:bg-opacity-90
+                        "
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -43,8 +141,8 @@ const ContactForm = () => {
         <Image
           className="absolute bottom-0 right-0"
           src={Spaceship}
-          width={440}
-          height={330}
+          width={240}
+          height={230}
         />
       </section>
     </div>
