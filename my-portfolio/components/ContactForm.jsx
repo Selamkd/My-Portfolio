@@ -35,12 +35,20 @@ const ContactForm = () => {
           <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             <div class="w-full md:w-96 md:max-w-full mx-auto">
               <div className="love flex justify-end mb-10">
-                <input id="switch" type="checkbox" />
-                <label class="love-heart" for="switch">
-                  <i class="left"></i>
-                  <i class="right"></i>
-                  <i class="bottom"></i>
-                  <div class="round"></div>
+                <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                  <input
+                    type="checkbox"
+                    name="toggle"
+                    id="toggle"
+                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                  />
+                  <label
+                    for="toggle"
+                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                  ></label>
+                </div>
+                <label for="toggle" class="text-xs text-gray-700">
+                  Toggle me.
                 </label>
               </div>
               <div class="p-6 border border-gray-300 sm:rounded-md">
