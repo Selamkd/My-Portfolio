@@ -15,7 +15,9 @@ import { SiJest } from 'react-icons/si';
 const Projects = () => {
   const [current, setCurrent] = useState(1);
   const [next, setNext] = useState(1);
-
+  const handleToggle = () => {
+    console.log('clicked');
+  };
   const handleSlideClick = (e, nextSlide) => {
     e.preventDefault();
     setNext(nextSlide);
