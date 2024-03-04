@@ -6,20 +6,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Spaceship from '../public/spaceship.png';
 const ContactForm = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <div class="container my-24  mx-auto md:px-6">
       <section class="mb-32">
         <div class="flex flex-wrap">
           <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-            <h2 class="text--big text-neutral-300">Contact Me</h2>
-            <p class="mb-6 text-neutral-500 dark:text-neutral-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, modi accusantium ipsum corporis quia asperiores
-              dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-              autem omnis fugiat perspiciatis? Ad, veritatis. Laudantium, modi
-              accusantium ipsum corporis quia asperiores dolorem nisi corrupti
-              eveniet dolores ad maiores repellendus enim
-            </p>
+            {toggle ? (
+              <h2 class="text--big text-neutral-300">Contact Me</h2>
+            ) : (
+              <h2 class="text--big text-neutral-300">Leave feedback</h2>
+            )}
+            {toggle ? (
+              <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium, modi accusantium ipsum corporis quia asperiores
+                dolorem nisi corrupti eveniet dolores ad maiores repellendus
+                enim autem omnis fugiat perspiciatis? Ad, veritatis. Laudantium,
+                modi accusantium ipsum corporis quia asperiores dolorem nisi
+                corrupti eveniet dolores ad maiores repellendus enim
+              </p>
+            ) : (
+              <p class="mb-6 text-neutral-500 dark:text-neutral-300"> Lorem </p>
+            )}
             <div className="flex items-center justify-start gap-8">
               <Link href="https://github.com/Selamkd">
                 <Image src={Github} alt="avatar pic" width={40} height={30} />
@@ -37,6 +51,7 @@ const ContactForm = () => {
               <div className="love flex justify-end mb-10">
                 <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                   <input
+                    onClick={handleToggle}
                     type="checkbox"
                     name="toggle"
                     id="toggle"
@@ -54,12 +69,13 @@ const ContactForm = () => {
               <div class="p-6 border border-gray-300 sm:rounded-md">
                 <h1 class="text--normal text-neutral-300">Form goes here</h1>
 
-                <form>
-                  <div class="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      class="
+                {toggle ? (
+                  <form>
+                    <div class="mb-6">
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        class="
                         w-full
                         rounded
                         py-3
@@ -70,13 +86,13 @@ const ContactForm = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                    />
-                  </div>
-                  <div class="mb-6">
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      class="
+                      />
+                    </div>
+                    <div class="mb-6">
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        class="
                         w-full
                         rounded
                         py-3
@@ -87,13 +103,13 @@ const ContactForm = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                    />
-                  </div>
-                  <div class="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Your Phone"
-                      class="
+                      />
+                    </div>
+                    <div class="mb-6">
+                      <input
+                        type="text"
+                        placeholder="Your Phone"
+                        class="
                         w-full
                         rounded
                         py-3
@@ -104,13 +120,13 @@ const ContactForm = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                    />
-                  </div>
-                  <div class="mb-6">
-                    <textarea
-                      rows="6"
-                      placeholder="Your Message"
-                      class="
+                      />
+                    </div>
+                    <div class="mb-6">
+                      <textarea
+                        rows="6"
+                        placeholder="Your Message"
+                        class="
                         w-full
                         rounded
                         py-3
@@ -122,12 +138,12 @@ const ContactForm = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                    ></textarea>
-                  </div>
-                  <div>
-                    <button
-                      type="submit"
-                      class="
+                      ></textarea>
+                    </div>
+                    <div>
+                      <button
+                        type="submit"
+                        class="
                         w-full
                         text-white
                         bg-primary
@@ -137,21 +153,78 @@ const ContactForm = () => {
                         transition
                         hover:bg-opacity-90
                         "
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <form>
+                    <div class="mb-6">
+                      <input
+                        type="text"
+                        placeholder="Name (optional)"
+                        class="
+                    w-full
+                    rounded
+                    py-3
+                    px-[14px]
+                    text-body-color text-base
+                    border border-[f0f0f0]
+                    outline-none
+                    focus-visible:shadow-none
+                    focus:border-primary
+                    "
+                      />
+                    </div>
+
+                    <div class="mb-6">
+                      <textarea
+                        rows="6"
+                        placeholder="Your Message"
+                        class="
+                    w-full
+                    rounded
+                    py-3
+                    px-[14px]
+                    text-body-color text-base
+                    border border-[f0f0f0]
+                    resize-none
+                    outline-none
+                    focus-visible:shadow-none
+                    focus:border-primary
+                    "
+                      ></textarea>
+                    </div>
+                    <div>
+                      <button
+                        type="submit"
+                        class="
+                    w-full
+                    text-white
+                    bg-primary
+                    rounded
+                    border border-primary
+                    p-3
+                    transition
+                    hover:bg-opacity-90
+                    "
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
           </div>
         </div>
-        <Image
+        {/* <Image
           className="absolute bottom-0 right-0"
           src={Spaceship}
           width={240}
           height={230}
-        />
+        /> */}
       </section>
     </div>
   );
