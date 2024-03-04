@@ -4,7 +4,7 @@ import Mail from '../public/Mail.png';
 import Github from '../public/Github.png';
 import Link from 'next/link';
 import Image from 'next/image';
-import Spaceship from '../public/spaceship.png';
+
 const ContactForm = () => {
   const [toggle, setToggle] = useState(false);
 
