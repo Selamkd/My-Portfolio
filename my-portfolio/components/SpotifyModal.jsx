@@ -3,6 +3,10 @@ import { SlSocialSpotify } from 'react-icons/sl';
 import { ImCool } from 'react-icons/im';
 import { BsEmojiHeartEyes } from 'react-icons/bs';
 const ModalContent = (props) => {
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(true);
+  };
   return (
     <>
       <section>
@@ -31,15 +35,18 @@ const ModalContent = (props) => {
                     Pick a mood and get a song recommendation from my playlist!
                   </p>
                 </div>
-                <button class="w-full dark:text-gray-800 dark:hover:bg-gray-100 dark:bg-white sm:w-auto mt-14 text-base leading-4 text-center text-white py-6 px-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 hover:bg-black">
-                  I'm in....start!
+                <button
+                  onClick={handleClick}
+                  class="w-full dark:text-gray-800 dark:hover:bg-gray-100 dark:bg-white sm:w-auto mt-14 text-base leading-4 text-center text-white py-6 px-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 hover:bg-black"
+                >
+                  Let's go!
                 </button>
                 <a
                   onClick={props.closeModal}
                   href="javascript:void(0)"
                   class="mt-6 dark:text-white dark:hover:border-white text-base leading-none focus:outline-none hover:border-gray-800 focus:border-gray-800 border-b border-transparent text-center text-gray-800"
                 >
-                  Nope.. get me out!
+                  Nope...get me out!
                 </a>
                 <button
                   onClick={props.closeModal}
@@ -73,13 +80,6 @@ const ModalContent = (props) => {
             </div>
           </div>
         </div>
-      </section>
-      {/* Page 2: Pick a mood and get a song recommendation*/}
-      <section>
-        <ImCool />
-        <BsEmojiHeartEyes />
-        <ImCool />
-        <BsEmojiHeartEyes />
       </section>
     </>
   );
