@@ -1,13 +1,9 @@
 import Intro from '../components/Intro';
 import Header from '../components/Header';
 import playlistCatagories from '../components/playlistCatagories';
-import { ImCool } from 'react-icons/im';
-import { BsEmojiHeartEyes } from 'react-icons/bs';
 import { SlSocialSpotify } from 'react-icons/sl';
 import SpotifyPlayer from '../components/SpotifyPlayer';
 import { useState } from 'react';
-import { FaUserAstronaut } from 'react-icons/fa';
-import { FaWaze } from 'react-icons/fa';
 import { FaFaceSadCry } from 'react-icons/fa6';
 import { TfiDrupal } from 'react-icons/tfi';
 import Image from 'next/image';
