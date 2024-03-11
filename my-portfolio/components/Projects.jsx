@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Arrow from '../public/Arrow-button.png';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJs, faReact } from '@fortawesome/free-brands-svg-icons';

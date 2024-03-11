@@ -5,8 +5,6 @@ import Linkeden from '../public/Linkeden.png';
 import Mail from '../public/Mail.png';
 import Github from '../public/Github.png';
 import Image from 'next/image';
-import YellowArrow from '../public/yellow-arrow.png';
-import ArrowRight from '../public/Arrow-right.png';
 import Me from '../public/me.png';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
