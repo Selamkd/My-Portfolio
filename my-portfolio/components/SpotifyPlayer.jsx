@@ -5,13 +5,23 @@ import trackIds from '../db/playlist.json';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 const SpotifyPlayer = (props) => {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
-  const filteredTracks = trackIds.filter(
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const shuffledTrackIds = shuffleArray(trackIds);
+
+  const filteredTracks = shuffledTrackIds.filter(
     (track) => track.moodTag === props.mood
   );
+
   const playNextTrack = () => {
-    setCurrentTrackIndex(
-      (prevIndex) => (prevIndex + 1) % filteredTracks.length
-    );
+    const randomIndex = Math.floor(Math.random() * filteredTracks.length);
+    setCurrentTrackIndex(randomIndex);
   };
 
   const playPreviousTrack = () => {

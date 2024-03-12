@@ -28,7 +28,7 @@ export default function PlaylistSelection(props) {
             <div className="w-96 md:w-auto dark:bg-gray-800 relative flex flex-col justify-center items-center  py-16 px-4 md:px-24 xl:py-38 xl:pb-48 xl:px-36">
               <div role="banner">
                 {!selectedMood ? (
-                  <h1 className="text-3xl mb-6">Pick your current mood</h1>
+                  <h1 className="text-3xl mb-6">Choose your current mood</h1>
                 ) : null}
               </div>
               <div className="flex justify-center items-center bg flex-wrap">
