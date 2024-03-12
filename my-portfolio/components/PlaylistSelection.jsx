@@ -4,7 +4,7 @@ import { SlSocialSpotify } from 'react-icons/sl';
 import SpotifyPlayer from './SpotifyPlayer';
 import { useState } from 'react';
 import rainbow from '../public/rainbow.svg';
-import inLove from '../public/inLove.svg';
+import inLove from '../public/InLove.svg';
 import disco from '../public/disco.svg';
 import sad from '../public/sad.svg';
 import Image from 'next/image';
