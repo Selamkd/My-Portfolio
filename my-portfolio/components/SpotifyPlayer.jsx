@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MdSkipNext } from 'react-icons/md';
 import { MdOutlineSkipPrevious } from 'react-icons/md';
 import trackIds from '../db/playlist.json';
+import { RiArrowGoBackLine } from 'react-icons/ri';
 const SpotifyPlayer = (props) => {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const filteredTracks = trackIds.filter(
@@ -68,15 +69,42 @@ const SpotifyPlayer = (props) => {
             </svg>
           </div>
           <div class="text-grey-darker">
-            <svg
-              class="w-8 h-8 hover:text-purple"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
+            <RiArrowGoBackLine
+              class="w-8 h-8 text-white hover:text-purple   "
               onClick={props.refresh}
+            />
+
+            <button
+              onClick={() => {
+                props.closeModal();
+                props.restart();
+              }}
+              className="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+              aria-label="close"
             >
-              <path d="M5 4a2 2 0 0 0-2 2v6H0l4 4 4-4H5V6h7l2-2H5zm10 4h-3l4-4 4 4h-3v6a2 2 0 0 1-2 2H6l2-2h7V8z" />
-            </svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L6 18"
+                  stroke="currentColor"
+                  strokeWidth="1.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="1.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
