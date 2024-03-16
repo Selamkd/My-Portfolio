@@ -26,9 +26,9 @@ const ModalContent = (props) => {
             }`}
           >
             {!start ? (
-              <div className="2xl:container  2xl:mx-auto py-48 px-4 md:px-28 flex justify-center items-center">
-                <div className="w-96 md:w-auto dark:bg-gray-800 relative flex flex-col justify-center items-center bg-white py-16 px-4 md:px-24 xl:py-24 xl:px-36">
-                  <div role="banner">
+              <div className="2xl:container   2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
+                <div className="w-96 lg:h-600  md:w-auto  bg-gray-800 relative flex flex-col  justify-center items-center  py-16 px-4 md:px-24 xl:py-24 xl:px-36">
+                  <div role="banner ">
                     <SlSocialSpotify size={123} className="text-[#1DB954]" />
                   </div>
                   <div className="mt-12">

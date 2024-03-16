@@ -40,7 +40,7 @@ const SpotifyPlayer = (props) => {
         height="380"
         allowTransparency="true"
         allow="encrypted-media"
-        className="spotify-container"
+        className="spotify-container mt-15 pt-0"
         autoPlay
       />
       <div>

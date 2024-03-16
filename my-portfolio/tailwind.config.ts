@@ -45,6 +45,12 @@ module.exports = {
         465: '465px',
         800: '800px',
       },
+      height: {
+        465: '465px',
+        500: '500px',
+        600: '600px',
+        800: '800px',
+      },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         Montserrat: ['Montserrat'],

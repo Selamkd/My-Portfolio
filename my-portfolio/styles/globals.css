@@ -424,3 +424,6 @@ span {
   @apply: bg-green-400;
   background-color: #68d391;
 }
+#spotify-modal {
+  @apply: bg-gray-600;
+}
