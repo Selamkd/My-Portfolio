@@ -34,7 +34,7 @@ const ModalContent = (props) => {
                   <div className="mt-12">
                     <h1
                       role="main"
-                      className="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800"
+                      className="text-3xl   dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800"
                     >
                       <span className="text-purple">Care</span>{' '}
                       <span className="text-red">to</span>{' '}
