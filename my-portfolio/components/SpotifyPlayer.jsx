@@ -36,7 +36,7 @@ const SpotifyPlayer = (props) => {
     <div>
       <iframe
         src={spotifyEmbedUrl}
-        width="300"
+        width="320"
         height="380"
         allowTransparency="true"
         allow="encrypted-media"

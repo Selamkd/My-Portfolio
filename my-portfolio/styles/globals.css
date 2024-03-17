@@ -427,3 +427,8 @@ span {
 #spotify-modal {
   @apply: bg-gray-600;
 }
+#modal-btn {
+  color: white !important;
+  font-family: 'Poppins', sans-serif;
+  text-transform: none;
+}

@@ -36,25 +36,31 @@ const ModalContent = (props) => {
                       role="main"
                       className="text-3xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800"
                     >
-                      Care to get to know me?
+                      <span className="text-purple">Care</span>{' '}
+                      <span className="text-red">to</span>{' '}
+                      <span className="text-yellow-200">get</span>{' '}
+                      <span className="text-blue-300">to</span>{' '}
+                      <span className="text-green-300">know</span>{' '}
+                      <span className="text-pink-400">me?</span>
                     </h1>
                   </div>
-                  <div className="mt">
-                    <p className="mt-6 sm:w-80 text-base dark:text-white leading-7 text-center text-gray-800">
+                  <div className="mt-5">
+                    <p className=" sm:w-100  text--small text-gray-400 leading-6 text-center">
                       Pick a mood and get a song recommendation from my
                       playlist!
                     </p>
                   </div>
                   <button
                     onClick={handleStart}
-                    className="w-full dark:text-gray-800 dark:hover:bg-gray-100 dark:bg-white sm:w-auto mt-14 text-base leading-4 text-center text-white py-6 px-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 hover:bg-black"
+                    id="modal-btn"
+                    className="btn  mt-10 "
                   >
+                    {' '}
                     Let's go!
                   </button>
                   <a
                     onClick={props.closeModal}
-                    href="javascript:void(0)"
-                    className="mt-6 dark:text-white dark:hover:border-white text-base leading-none focus:outline-none hover:border-gray-800 focus:border-gray-800 border-b border-transparent text-center text-gray-800"
+                    className="mt-6 dark:text-white text-base leading-none focus:outline-none hover:border-purple focus:border-purple border-b border-transparent text-center text-gray-800"
                   >
                     Nope...get me out!
                   </a>

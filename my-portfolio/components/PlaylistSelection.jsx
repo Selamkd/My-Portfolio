@@ -31,7 +31,7 @@ export default function PlaylistSelection(props) {
                   <h1 className="text-3xl mb-6">Choose your current mood</h1>
                 ) : null}
               </div>
-              <div className="flex justify-center items-center flex-wrap">
+              <div className="flex justify-center items-center mt-8 flex-wrap">
                 {selectedMood ? (
                   <SpotifyPlayer
                     mood={selectedMood}
