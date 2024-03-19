@@ -37,11 +37,11 @@ const ModalContent = (props) => {
                       className="text-3xl   dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800"
                     >
                       <span className="text-purple">Care</span>{' '}
-                      <span className="text-red">to</span>{' '}
-                      <span className="text-yellow-200">get</span>{' '}
-                      <span className="text-blue-300">to</span>{' '}
-                      <span className="text-green-300">know</span>{' '}
-                      <span className="text-pink-400">me?</span>
+                      <span className="text-red ">to</span>{' '}
+                      <span className="text-yellow-200 ">get</span>{' '}
+                      <span className="text-blue-300 ">to</span>{' '}
+                      <span className="text-green-300 ">know</span>{' '}
+                      <span className="text-pink-400 ">me?</span>
                     </h1>
                   </div>
                   <div className="mt-5">
