@@ -55,7 +55,7 @@ const ContactForm = () => {
                     type="checkbox"
                     name="toggle"
                     id="toggle"
-                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-dark-1 border-4 appearance-none cursor-pointer"
                   />
                   <label
                     for="toggle"
