@@ -4,33 +4,24 @@ import heading from '../public/chromium.png';
 import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Icon from '../public/Name-tag.png';
-import sun from '../public/sun.png';
-import cloud from '../public/cloud.png';
+import sun from '../public/sun1.png';
+import clouds from '../public/cloud.png';
 import Heart from '../public/heart.png';
 import Link from 'next/link';
 import { getPositionAvatar } from './helpers';
 import { getPositionText } from './helpers';
 import { getPositionTextsm } from './helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-
 import { motion } from 'framer-motion';
+
 const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [currentIcon, setCurrentIcon] = useState(null);
-
-  const handleIconChange = () => {
-    const icons = [sun, cloud];
-
-    setCurrentIcon(icons[1]);
-  };
+  const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const handleScroll = (e) => {
       if (e.deltaY > 0) {
         setScrolled(true);
-        handleIconChange();
       } else {
         setScrolled(false);
       }
@@ -43,17 +34,57 @@ const LandingPage = () => {
       window.removeEventListener('wheel', handleScroll);
     };
   }, [scrolled]);
+
+  useEffect(() => {
+    async function fetchWeatherData() {
+      const url =
+        'https://weather-api138.p.rapidapi.com/weather?city_name=Fergana';
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key':
+            '6c78baec94mshd1b7b3194a5c63fp161193jsn54a71e144f1d',
+          'X-RapidAPI-Host': 'weather-api138.p.rapidapi.com',
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        setWeather(result.weather[0].main.toLowerCase());
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchWeatherData();
+  }, [weather]);
+
+  const getWeatherIcon = () => {
+    switch (weather) {
+      case 'sunny':
+        return <Image src={sun} alt="Sun Icon" width={200} height={200} />;
+      case 'clouds':
+        return <Image src={clouds} alt="Cloud Icon" width={220} height={220} />;
+      case 'rainy':
+        return (
+          <Image
+            src="/rain-icon.png"
+            alt="Rain Icon"
+            width={220}
+            height={220}
+          />
+        );
+      default:
+        return <Image src={sun} alt="Sun Icon" width={220} height={220} />;
+    }
+  };
+
   return (
     <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
       {/* Sun icon */}
       {scrolled ? (
-        <div className="absolute top-0 right-0 animate-bounce ease-in-out">
-          <Image
-            src={currentIcon}
-            alt="weather-icon"
-            width={250}
-            height={220}
-          />
+        <div className="absolute top-0 right-0 animate-pulse ease-in-out">
+          {weather && getWeatherIcon()}
         </div>
       ) : null}
 
