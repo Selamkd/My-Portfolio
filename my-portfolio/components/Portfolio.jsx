@@ -94,7 +94,13 @@ const LandingPage = () => {
       <motion.div
         initial={{ x: '5%', y: '85%' }}
         animate={
-          scrolled ? { scale: 1.3, x: '-170%', y: '-45%' } : { scale: 1 }
+          scrolled
+            ? {
+                scale: 1.3,
+                x: getPositionAvatar(scrolled).x,
+                y: getPositionAvatar(scrolled).y,
+              }
+            : { scale: 1 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="absolute bottom-0 right-0  p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
