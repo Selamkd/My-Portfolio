@@ -5,9 +5,12 @@ import Avatar from '../public/avatar-pic.png';
 import Arrow from '../public/Arrow-button.png';
 import Icon from '../public/Name-tag.png';
 import sun from '../public/sun.png';
+import cloud from '../public/cloud.png';
 import Heart from '../public/heart.png';
 import Link from 'next/link';
 import { getPositionAvatar } from './helpers';
+import { getPositionText } from './helpers';
+import { getPositionTextsm } from './helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -15,11 +18,19 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [currentIcon, setCurrentIcon] = useState(null);
+
+  const handleIconChange = () => {
+    const icons = [sun, cloud];
+
+    setCurrentIcon(icons[0] || icons[1]);
+  };
 
   useEffect(() => {
     const handleScroll = (e) => {
       if (e.deltaY > 0) {
         setScrolled(true);
+        handleIconChange();
       } else {
         setScrolled(false);
       }
@@ -36,8 +47,13 @@ const LandingPage = () => {
     <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
       {/* Sun icon */}
       {scrolled ? (
-        <div className="absolute top-0 right-0">
-          <Image src={sun} alt="sun-icon" width={250} height={250} />
+        <div className="absolute top-0 right-0 animate-bounce ease-in-out">
+          <Image
+            src={currentIcon}
+            alt="weather-icon"
+            width={220}
+            height={220}
+          />
         </div>
       ) : null}
 
@@ -45,7 +61,13 @@ const LandingPage = () => {
       <motion.div
         initial="hidden"
         animate={
-          scrolled ? { scale: 0.5, x: '-40%', y: '-150%' } : { scale: 1 }
+          scrolled
+            ? {
+                scale: getPositionText(scrolled).scale,
+                x: getPositionText(scrolled).x,
+                y: getPositionText(scrolled).y,
+              }
+            : { scale: 1 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="flex items-center justify-center"
@@ -83,7 +105,13 @@ const LandingPage = () => {
       <motion.div
         initial="hidden"
         animate={
-          scrolled ? { scale: 1, x: '-170%', y: '-1000%' } : { scale: 1 }
+          scrolled
+            ? {
+                scale: getPositionTextsm(scrolled).scale,
+                x: getPositionTextsm(scrolled).x,
+                y: getPositionTextsm(scrolled).y,
+              }
+            : { scale: 1 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
@@ -96,7 +124,7 @@ const LandingPage = () => {
         animate={
           scrolled
             ? {
-                scale: 1.3,
+                scale: getPositionAvatar(scrolled).scale,
                 x: getPositionAvatar(scrolled).x,
                 y: getPositionAvatar(scrolled).y,
               }

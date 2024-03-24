@@ -5,7 +5,7 @@ import Linkeden from '../public/Linkeden.png';
 import Mail from '../public/Mail.png';
 import Github from '../public/Github.png';
 import Image from 'next/image';
-import Me from '../public/me.png';
+import Me from '../public/IMG_1144.jpg';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -34,8 +34,14 @@ const Intro = () => {
 
       <div className="md:flex md:flex-col md:items-center md:justify-center">
         <div className="flex justify-between w-full mb-4"></div>
-        <div className="mb-4">
-          <Image src={Me} alt="avatar pic" width={320} height={200} />
+        <div className="mb-4 ">
+          <Image
+            src={Me}
+            className="rounded-lg"
+            alt="avatar pic"
+            width={320}
+            height={200}
+          />
         </div>
         <div className="flex items-center justify-center gap-8">
           <Link href="https://github.com/Selamkd">
