@@ -23,7 +23,7 @@ const LandingPage = () => {
   const handleIconChange = () => {
     const icons = [sun, cloud];
 
-    setCurrentIcon(icons[0] || icons[1]);
+    setCurrentIcon(icons[1]);
   };
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const LandingPage = () => {
           <Image
             src={currentIcon}
             alt="weather-icon"
-            width={220}
+            width={250}
             height={220}
           />
         </div>
@@ -142,10 +142,10 @@ const LandingPage = () => {
         className="absolute  bottom-0 right-45"
       >
         <Link href="/about">
-          <svg class="arrows">
+          <svg className="arrows">
             <path
-              stroke-linecap="round"
-              class="a1"
+              strokeLinecap="round"
+              className="a1"
               d="M0 0 L20 22 L40 0"
             ></path>
           </svg>
