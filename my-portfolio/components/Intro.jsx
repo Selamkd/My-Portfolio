@@ -5,10 +5,12 @@ import Linkeden from '../public/Linkeden.png';
 import Mail from '../public/Mail.png';
 import Github from '../public/Github.png';
 import Image from 'next/image';
-import Me from '../public/IMG_1144.jpg';
+import Me from '../public/IMG_1230.jpeg';
 import Link from 'next/link';
+import yellowArrow from '../public/yellow-arrow.png';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Twinkle_Star } from 'next/font/google';
 const Intro = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,13 +33,28 @@ const Intro = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:items-center w-full h-screen">
       {/* Image and social links */}
+      <div className="absolute flex justify-between top-0 w-[100%] ">
+        <div className="absolute top-0 left-0">
+          <Image src={Bluewave} alt="avatar pic" width={140} height={130} />
+        </div>
+
+        <div className="absolute top-0 right-0">
+          <Image
+            src={Cherry}
+            className="justify-end"
+            alt="avatar pic"
+            width={140}
+            height={130}
+          />
+        </div>
+      </div>
 
       <div className="md:flex md:flex-col md:items-center md:justify-center">
         <div className="flex justify-between w-full mb-4"></div>
-        <div className="mb-4 ">
+        <div className="mb-4 z-40 ">
           <Image
             src={Me}
-            className="rounded-lg"
+            className="rounded-lg z-100"
             alt="avatar pic"
             width={320}
             height={200}
@@ -59,9 +76,9 @@ const Intro = () => {
       <div className="md:px-3 w-[80%] ">
         <h1
           id="greet"
-          className="text--big text-3xl!important text-center mb-10"
+          className="text--big  text-3xl!important text-center mb-10"
         >
-          Hello 👋🏾
+          Hello
         </h1>
         <p className="text--normal ">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -101,6 +118,12 @@ const Intro = () => {
             </svg>
           </Link>
         </motion.div>
+      </div>
+      <div className="absolute bottom-0 right-0 flex justify-end  w-[100%]">
+        <Image src={Pinkwave} alt="avatar pic" width={240} height={230} />
+      </div>
+      <div className="absolute bottom-0 right-0 flex justify-center mr-36  w-[100%]">
+        <Image src={yellowArrow} alt="avatar pic" width={240} height={230} />
       </div>
     </div>
   );
