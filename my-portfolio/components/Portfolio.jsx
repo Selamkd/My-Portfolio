@@ -19,6 +19,8 @@ const LandingPage = () => {
   const [weather, setWeather] = useState(null);
   const [centerX, setCenterX] = useState(null);
   const [centerY, setCenterY] = useState(null);
+  const textid1 = scrolled ? 'text-1-scrolled' : 'text-1';
+  const textid2 = scrolled ? 'text-2-scrolled' : 'text-2';
   console.log(weather);
   useEffect(() => {
     const handleScroll = (e) => {
@@ -94,14 +96,14 @@ const LandingPage = () => {
     <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
       {/* Sun icon */}
       {scrolled ? (
-        <div className="absolute top-0 right-0  ease-in-out">
+        <div id="weather-icon" className="absolute top-0 right-0  ease-in-out ">
           {weather && getWeatherIcon()}
         </div>
       ) : null}
 
       {/* name, h3, icons */}
       <motion.div
-        id="text-1"
+        id={textid1}
         initial="hidden"
         animate={
           scrolled
@@ -146,7 +148,7 @@ const LandingPage = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        id="text-2"
+        id={textid2}
         initial="hidden"
         animate={
           scrolled

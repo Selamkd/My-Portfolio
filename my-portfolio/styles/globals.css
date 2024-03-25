@@ -435,27 +435,57 @@ span {
 
 /* media queries */
 @media screen and (min-width: 1500px) {
-  #text-2 {
+  #text-2-scrolled {
     margin-left: 5%;
   }
-  #text-1 {
+  #text-1-scrolled {
     margin-left: 5%;
   }
 }
 
 @media screen and (max-width: 1500px) and (min-width: 1000px) {
-  #text-2 {
+  #text-2-scrolled {
     margin-left: 17%;
   }
-  #text-1 {
+  #text-1-scrolled {
     margin-left: 10%;
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 550px) {
-  #text-2 {
+  #text-1-scrolled {
     margin-left: 13%;
-    border: 1px solid red;
+  }
+  #text-2-scrolled {
+    margin-left: 16%;
   }
 }
-@media screen and (max-width: 850px) and (min-width: 550px) {
+@media screen and (max-width: 850px) and (min-width: 600px) {
+  #text-2-scrolled {
+    margin-top: 3%;
+  }
+  #text-1-scrolled {
+    margin-left: 14%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #text-2-scrolled {
+    text-align: center;
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 20%;
+    margin-top: 45%;
+    width: 100%;
+  }
+  #text-1-scrolled {
+    text-align: center;
+    position: absolute;
+    margin-left: 60%;
+    margin-bottom: 25%;
+    margin-top: 25%;
+    width: 100%;
+  }
+  #weather-icon {
+    border: 1px solid yellow;
+    display: none;
+  }
 }
