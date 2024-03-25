@@ -72,7 +72,15 @@ const LandingPage = () => {
   const getWeatherIcon = (weather) => {
     switch (weather) {
       case 'sunny':
-        return <Image src={sun} alt="Sun Icon" width={200} height={200} />;
+        return (
+          <Image
+            id="weather-icon"
+            src={sun}
+            alt="Sun Icon"
+            width={200}
+            height={200}
+          />
+        );
       case 'clouds':
         return <Image src={clouds} alt="Cloud Icon" width={250} height={220} />;
       case 'rainy':
@@ -93,6 +101,7 @@ const LandingPage = () => {
 
       {/* name, h3, icons */}
       <motion.div
+        id="text-1"
         initial="hidden"
         animate={
           scrolled
@@ -137,6 +146,7 @@ const LandingPage = () => {
         </motion.div>
       </motion.div>
       <motion.div
+        id="text-2"
         initial="hidden"
         animate={
           scrolled
@@ -154,15 +164,16 @@ const LandingPage = () => {
         </h3>
       </motion.div>
       <motion.div
+        id="avatar-img"
         initial={{ x: '98%', y: '155%', scale: 1.3 }}
         animate={
           scrolled
             ? {
                 scale: getPositionAvatar(scrolled).scale,
                 x: '8%',
-                y: '20%',
+                y: '18%',
               }
-            : { scale: 1 }
+            : { scale: 1.2 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="absolute p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"

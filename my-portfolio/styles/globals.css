@@ -432,3 +432,30 @@ span {
   font-family: 'Poppins', sans-serif;
   text-transform: none;
 }
+
+/* media queries */
+@media screen and (min-width: 1500px) {
+  #text-2 {
+    margin-left: 5%;
+  }
+  #text-1 {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1000px) {
+  #text-2 {
+    margin-left: 17%;
+  }
+  #text-1 {
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 550px) {
+  #text-2 {
+    margin-left: 13%;
+    border: 1px solid red;
+  }
+}
+@media screen and (max-width: 850px) and (min-width: 550px) {
+}
