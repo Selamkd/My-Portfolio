@@ -98,8 +98,8 @@ const LandingPage = () => {
           scrolled
             ? {
                 scale: getPositionText(scrolled).scale,
-                x: getPositionText(scrolled).x,
-                y: getPositionText(scrolled).y,
+                x: '-35vw',
+                y: '-32vh',
               }
             : { scale: 1 }
         }
@@ -142,8 +142,8 @@ const LandingPage = () => {
           scrolled
             ? {
                 scale: getPositionTextsm(scrolled).scale,
-                x: getPositionTextsm(scrolled).x,
-                y: getPositionTextsm(scrolled).y,
+                x: '-40vw',
+                y: '-38vh',
               }
             : { scale: 1 }
         }
