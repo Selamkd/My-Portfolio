@@ -17,7 +17,9 @@ import { motion } from 'framer-motion';
 const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
   const [weather, setWeather] = useState(null);
-
+  const [centerX, setCenterX] = useState(null);
+  const [centerY, setCenterY] = useState(null);
+  console.log(weather);
   useEffect(() => {
     const handleScroll = (e) => {
       if (e.deltaY > 0) {
@@ -34,7 +36,14 @@ const LandingPage = () => {
       window.removeEventListener('wheel', handleScroll);
     };
   }, [scrolled]);
+  console.log(weather);
 
+  useEffect(() => {
+    if (scrolled) {
+      setCenterX(window.innerWidth / 2);
+      setCenterY(window.innerHeight / 2);
+    }
+  }, [scrolled]);
   useEffect(() => {
     async function fetchWeatherData() {
       const url =
@@ -51,6 +60,7 @@ const LandingPage = () => {
       try {
         const response = await fetch(url, options);
         const result = await response.json();
+
         setWeather(result.weather[0].main.toLowerCase());
       } catch (error) {
         console.error(error);
@@ -59,21 +69,14 @@ const LandingPage = () => {
     fetchWeatherData();
   }, [weather]);
 
-  const getWeatherIcon = () => {
+  const getWeatherIcon = (weather) => {
     switch (weather) {
       case 'sunny':
         return <Image src={sun} alt="Sun Icon" width={200} height={200} />;
       case 'clouds':
-        return <Image src={clouds} alt="Cloud Icon" width={220} height={220} />;
+        return <Image src={clouds} alt="Cloud Icon" width={250} height={220} />;
       case 'rainy':
-        return (
-          <Image
-            src="/rain-icon.png"
-            alt="Rain Icon"
-            width={220}
-            height={220}
-          />
-        );
+        return <Image src={clouds} alt="Rain Icon" width={220} height={220} />;
       default:
         return <Image src={sun} alt="Sun Icon" width={220} height={220} />;
     }
@@ -83,7 +86,7 @@ const LandingPage = () => {
     <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
       {/* Sun icon */}
       {scrolled ? (
-        <div className="absolute top-0 right-0 animate-pulse ease-in-out">
+        <div className="absolute top-0 right-0  ease-in-out">
           {weather && getWeatherIcon()}
         </div>
       ) : null}
@@ -151,18 +154,23 @@ const LandingPage = () => {
         </h3>
       </motion.div>
       <motion.div
-        initial={{ x: '5%', y: '85%' }}
+        initial={{ scale: 1 }} // Initial scale
         animate={
           scrolled
             ? {
                 scale: getPositionAvatar(scrolled).scale,
-                x: getPositionAvatar(scrolled).x,
-                y: getPositionAvatar(scrolled).y,
+                x: '8%',
+                y: '20%',
               }
-            : { scale: 1 }
+            : { x: '98%', y: '155%', scale: 1.3 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute bottom-0 right-0  p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
+        className="absolute p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
+        // style={{
+        //   left: scrolled ? '30%' : '5%', // horizontally center when scrolled
+        //   top: scrolled ? '20%' : '85%', // vertically center when scrolled
+        //   transform: 'translate(-50%, -50%)', // center the element
+        // }}
       >
         <Image src={Avatar} alt="avatar" width={400} height={350} />
       </motion.div>

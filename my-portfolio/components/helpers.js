@@ -1,7 +1,6 @@
 export const getPositionAvatar = (scrolled) => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-  console.log(windowWidth, windowHeight);
 
   if (scrolled) {
     if (windowWidth > 1500) {
