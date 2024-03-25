@@ -154,7 +154,7 @@ const LandingPage = () => {
         </h3>
       </motion.div>
       <motion.div
-        initial={{ scale: 1 }} // Initial scale
+        initial={{ x: '98%', y: '155%', scale: 1.3 }}
         animate={
           scrolled
             ? {
@@ -162,15 +162,10 @@ const LandingPage = () => {
                 x: '8%',
                 y: '20%',
               }
-            : { x: '98%', y: '155%', scale: 1.3 }
+            : { scale: 1 }
         }
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="absolute p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
-        // style={{
-        //   left: scrolled ? '30%' : '5%', // horizontally center when scrolled
-        //   top: scrolled ? '20%' : '85%', // vertically center when scrolled
-        //   transform: 'translate(-50%, -50%)', // center the element
-        // }}
       >
         <Image src={Avatar} alt="avatar" width={400} height={350} />
       </motion.div>
