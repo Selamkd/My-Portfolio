@@ -8,6 +8,7 @@ import sun from '../public/sun1.png';
 import clouds from '../public/cloud.png';
 import Heart from '../public/heart.png';
 import Link from 'next/link';
+import flower from '../public/flower-mobile.png';
 import { getPositionAvatar } from './helpers';
 import { getPositionText } from './helpers';
 import { getPositionTextsm } from './helpers';
@@ -53,12 +54,6 @@ const LandingPage = () => {
 
   console.log(weather);
 
-  useEffect(() => {
-    if (scrolled) {
-      setCenterX(window.innerWidth / 2);
-      setCenterY(window.innerHeight / 2);
-    }
-  }, [scrolled]);
   useEffect(() => {
     async function fetchWeatherData() {
       const url =
@@ -106,112 +101,166 @@ const LandingPage = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
-      {/* Sun icon */}
-      {scrolled ? (
-        <div id="weather-icon" className="absolute top-0 right-0  ease-in-out ">
-          {weather && getWeatherIcon()}
-        </div>
-      ) : null}
+    <>
+      {isMobile ? (
+        <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-between relative">
+          <div className="flex flex-col items-center justify-between">
+            <div className="absolute top-0 right-0">
+              <Image
+                src={flower}
+                className=""
+                alt="heart"
+                width={170}
+                height={140}
+              />
+            </div>
 
-      {/* name, h3, icons */}
-      <motion.div
-        id={textid1}
-        initial="hidden"
-        animate={
-          scrolled
-            ? {
-                scale: getPositionText(scrolled).scale,
-                x: '-35vw',
-                y: '-32vh',
-              }
-            : { scale: 1 }
-        }
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className="flex items-center justify-center"
-      >
-        <motion.div
-          animate={scrolled ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
-        >
-          {' '}
-          <Image
-            src={Heart}
-            className="self-start mr-10 mb-7"
-            alt="heart"
-            width={130}
-            height={100}
-          />
-        </motion.div>
-        {/* {scrolled ? <h1 id="heading-text"  className="font-bold text-purple text-9xl"   >Selam Ararsa</h1>:  */}
-        <Image src={heading} alt="heading" width={1100} height={181} />
+            {/* <Image
+              src={Icon}
+              alt="icon"
+              className=""
+              width={100}
+              height={100}
+            /> */}
+          </div>
 
-        <motion.div
-          className="mb-10"
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 1, repeat: 3 }}
-        >
-          <Image
-            src={Icon}
-            alt="icon"
-            className="mb-10"
-            width={100}
-            height={100}
-          />
-        </motion.div>
-      </motion.div>
-      <motion.div
-        id={textid2}
-        initial="hidden"
-        animate={
-          scrolled
-            ? {
-                scale: getPositionTextsm(scrolled).scale,
-                x: '-40vw',
-                y: '-38vh',
-              }
-            : { scale: 1 }
-        }
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        <h3 className="text-2xl text-blue-100 text-center">
-          Full-stack developer
-        </h3>
-      </motion.div>
-      <motion.div
-        id="avatar-img"
-        initial={{ x: '98%', y: '155%', scale: 1.3 }}
-        animate={
-          scrolled && !isMobile
-            ? {
-                scale: getPositionAvatar(scrolled).scale,
-                x: '8%',
-                y: '18%',
-              }
-            : { scale: 1.2 }
-        }
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
-      >
-        <Image src={Avatar} alt="avatar" width={400} height={350} />
-      </motion.div>
-      {/* Arrow */}
-      <motion.div
-        initial="hidden"
-        animate={scrolled ? { scale: 1, opacity: 1 } : { scale: 1, opacity: 0 }}
-        className="absolute  bottom-0 right-45"
-      >
-        <Link href="/about">
-          <svg className="arrows">
-            <path
-              strokeLinecap="round"
-              className="a1"
-              d="M0 0 L20 22 L40 0"
-            ></path>
-          </svg>
-        </Link>
-      </motion.div>
-    </section>
+          <div className="mt-1">
+            <Image src={Avatar} alt="avatar" width={600} height={450} />
+          </div>
+          <h1 className="text-2xl mt-7 text-purple text-center">
+            {' '}
+            Selam Ararsa
+          </h1>
+          <div className="">
+            <h3 className="text-sm mt-4 text-blue-100 text-center">
+              Full-stack developer
+            </h3>
+          </div>
+          <motion.div className="absolute  bottom-0 right-[50%]">
+            <Link href="/about">
+              <svg className="arrows">
+                <path
+                  strokeLinecap="round"
+                  className="a1"
+                  d="M0 0 L20 22 L40 0"
+                ></path>
+              </svg>
+            </Link>
+          </motion.div>
+        </section>
+      ) : (
+        <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
+          {/* Sun icon */}
+          {scrolled ? (
+            <div
+              id="weather-icon"
+              className="absolute top-0 right-0  ease-in-out "
+            >
+              {weather && getWeatherIcon()}
+            </div>
+          ) : null}
+
+          {/* name, h3, icons */}
+          <motion.div
+            id={textid1}
+            initial="hidden"
+            animate={
+              scrolled
+                ? {
+                    scale: getPositionText(scrolled).scale,
+                    x: '-35vw',
+                    y: '-32vh',
+                  }
+                : { scale: 1 }
+            }
+            transition={{ duration: 1, ease: 'easeInOut' }}
+            className="flex items-center justify-center"
+          >
+            <motion.div
+              animate={scrolled ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 1, ease: 'easeInOut' }}
+            >
+              {' '}
+              <Image
+                src={Heart}
+                className="self-start mr-10 mb-7"
+                alt="heart"
+                width={130}
+                height={100}
+              />
+            </motion.div>
+            <Image src={heading} alt="heading" width={1100} height={181} />
+
+            <motion.div
+              className="mb-10"
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 1, repeat: 3 }}
+            >
+              <Image
+                src={Icon}
+                alt="icon"
+                className="mb-10"
+                width={100}
+                height={100}
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            id={textid2}
+            initial="hidden"
+            animate={
+              scrolled
+                ? {
+                    scale: getPositionTextsm(scrolled).scale,
+                    x: '-40vw',
+                    y: '-38vh',
+                  }
+                : { scale: 1 }
+            }
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            <h3 className="text-2xl text-blue-100 text-center">
+              Full-stack developer
+            </h3>
+          </motion.div>
+          <motion.div
+            id="avatar-img"
+            initial={{ x: '98%', y: '155%', scale: 1.3 }}
+            animate={
+              scrolled && !isMobile
+                ? {
+                    scale: getPositionAvatar(scrolled).scale,
+                    x: '8%',
+                    y: '18%',
+                  }
+                : { scale: 1.2 }
+            }
+            transition={{ duration: 1, ease: 'easeInOut' }}
+            className="absolute p-2 rounded-lg md:ml-6 md:border-solid md:border-purple lg:mr-10"
+          >
+            <Image src={Avatar} alt="avatar" width={400} height={350} />
+          </motion.div>
+          {/* Arrow */}
+          <motion.div
+            initial="hidden"
+            animate={
+              scrolled ? { scale: 1, opacity: 1 } : { scale: 1, opacity: 0 }
+            }
+            className="absolute  bottom-0 right-45"
+          >
+            <Link href="/about">
+              <svg className="arrows">
+                <path
+                  strokeLinecap="round"
+                  className="a1"
+                  d="M0 0 L20 22 L40 0"
+                ></path>
+              </svg>
+            </Link>
+          </motion.div>
+        </section>
+      )}
+    </>
   );
 };
 export default LandingPage;

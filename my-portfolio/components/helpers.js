@@ -9,6 +9,8 @@ export const getPositionAvatar = (scrolled) => {
       return { x: '-120%', y: '-35%', scale: 1.4 };
     } else if (windowWidth <= 1000 && windowWidth >= 550) {
       return { x: '-106%', y: '-20%', scale: 1 };
+    } else if (windowWidth <= 550 && windowWidth >= 50) {
+      return { x: '-106%', y: '-20%', scale: 1.5 };
     }
   } else {
     return { x: '180px', y: '190px', scale: 1 };
