@@ -41,7 +41,7 @@ const Intro = () => {
         <div className="absolute top-0 right-0">
           <Image
             src={Cherry}
-            className="justify-end"
+            className="justify-end "
             alt="avatar pic"
             width={140}
             height={130}

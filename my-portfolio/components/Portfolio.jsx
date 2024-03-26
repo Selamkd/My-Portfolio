@@ -19,9 +19,11 @@ const LandingPage = () => {
   const [weather, setWeather] = useState(null);
   const [centerX, setCenterX] = useState(null);
   const [centerY, setCenterY] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   const textid1 = scrolled ? 'text-1-scrolled' : 'text-1';
   const textid2 = scrolled ? 'text-2-scrolled' : 'text-2';
   console.log(weather);
+
   useEffect(() => {
     const handleScroll = (e) => {
       if (e.deltaY > 0) {
@@ -31,13 +33,24 @@ const LandingPage = () => {
       }
     };
 
-    window.addEventListener('wheel', handleScroll);
-    console.log(scrolled);
+    const handleResize = () => {
+      if (window.innerWidth <= 650) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
 
+    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
     return () => {
       window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, [scrolled]);
+
   console.log(weather);
 
   useEffect(() => {
@@ -169,7 +182,7 @@ const LandingPage = () => {
         id="avatar-img"
         initial={{ x: '98%', y: '155%', scale: 1.3 }}
         animate={
-          scrolled
+          scrolled && !isMobile
             ? {
                 scale: getPositionAvatar(scrolled).scale,
                 x: '8%',
