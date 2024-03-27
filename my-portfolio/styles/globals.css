@@ -489,3 +489,9 @@ span {
     display: none;
   }
 }
+@media not all and (-webkit-min-device-pixel-ratio: 0) {
+  /* Safari-specific styles */
+  #mobile-home {
+    overflow: hidden;
+  }
+}
