@@ -21,5 +21,6 @@
 
 ### Usage
 1. Clone the repository
-2. Run `npm install`
-3. Start the development server with `npm run dev`
+2. cd to my-portfolio
+3. Run `npm install`
+4. Start the development server with `npm run dev`
