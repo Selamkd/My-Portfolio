@@ -104,17 +104,7 @@ const LandingPage = () => {
     <>
       {isMobile ? (
         <section className="w-full  flex flex-col h-screen justify-center items-between relative">
-          <div className="flex flex-col items-center justify-between">
-            <div className="absolute top-0 right-0">
-              <Image
-                src={flower}
-                className=""
-                alt="heart"
-                width={170}
-                height={100}
-              />
-            </div>
-          </div>
+          <div className="flex flex-col items-center justify-between"></div>
 
           <div className="mt-1">
             <Image src={Avatar} alt="avatar" width={600} height={450} />
