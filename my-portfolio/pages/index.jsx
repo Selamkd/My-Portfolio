@@ -4,7 +4,7 @@ import Portfolio from '../components/Portfolio';
 import Header from '../components/Header';
 export default function Home() {
   return (
-    <main className="flex flex-col h-screen overflow-hidden">
+    <main className="flex flex-col h-[100dvh] overflow-hidden">
       <Header />
       <Portfolio />
     </main>

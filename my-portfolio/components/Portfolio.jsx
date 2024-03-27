@@ -105,7 +105,7 @@ const LandingPage = () => {
       {isMobile ? (
         <section
           id="mobile-home "
-          className="w-full  flex flex-col h-[100dvh] justify-center items-between relative"
+          className="w-full  flex flex-col  justify-center items-between relative"
         >
           <div className="flex flex-col overflow-hidden ">
             <div className="">
