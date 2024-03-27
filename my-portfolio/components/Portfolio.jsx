@@ -107,7 +107,7 @@ const LandingPage = () => {
           id="mobile-home "
           className="w-full  flex flex-col h-screen justify-center items-between relative"
         >
-          <div className="flex flex-col items-center justify-between">
+          <div className="flex fixed h-[100vh]flex-col items-center justify-between">
             <div className="">
               <Image src={Avatar} alt="avatar" width={600} height={450} />
             </div>
