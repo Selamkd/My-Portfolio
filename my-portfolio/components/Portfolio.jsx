@@ -103,10 +103,7 @@ const LandingPage = () => {
   return (
     <>
       {isMobile ? (
-        <section
-          id="mobile-home"
-          className="w-full fixed h-[100vh] flex flex-col  justify-center items-between"
-        >
+        <section className="w-full  flex flex-col h-screen justify-center items-between relative">
           <div className="flex flex-col items-center justify-between">
             <div className="absolute top-0 right-0">
               <Image
@@ -114,7 +111,7 @@ const LandingPage = () => {
                 className=""
                 alt="heart"
                 width={170}
-                height={140}
+                height={100}
               />
             </div>
           </div>
