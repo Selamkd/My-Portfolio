@@ -65,10 +65,10 @@ const Intro = () => {
             <div className="mb-4 z-1 ">
               <Image
                 src={Me}
-                className="rounded-lg z-800 mt-8"
+                className="rounded-sm z-800 mt-8"
                 alt="avatar pic"
-                width={240}
-                height={200}
+                width={230}
+                height={100}
               />
             </div>
             <div className="flex items-center justify-center gap-8">
@@ -99,24 +99,24 @@ const Intro = () => {
             </p>
 
             {/* Arrow */}
-            <motion.div
-              initial="hidden"
-              animate={{ scale: 1, opacity: 1 }}
-              className="absolute  bottom-0 right-[50%]"
-            >
-              <Link href="/projects">
-                <svg className="arrows">
-                  <path
-                    strokeLinecap="round"
-                    className="a1"
-                    d="M0 0 L20 22 L40 0"
-                  ></path>
-                </svg>
-              </Link>
-            </motion.div>
           </div>
+          <motion.div
+            initial="hidden"
+            animate={{ scale: 1, opacity: 1 }}
+            className="absolute  bottom-0 right-[50%]"
+          >
+            <Link href="/projects">
+              <svg className="arrows">
+                <path
+                  strokeLinecap="round"
+                  className="a1"
+                  d="M0 0 L20 22 L40 0"
+                ></path>
+              </svg>
+            </Link>
+          </motion.div>
           <div className="absolute bottom-0 right-0 flex justify-end  w-[100%]">
-            <Image src={Pinkwave} alt="avatar pic" width={10} height={90} />
+            <Image src={Pinkwave} alt="avatar pic" width={60} height={60} />
           </div>
         </div>
       ) : (
