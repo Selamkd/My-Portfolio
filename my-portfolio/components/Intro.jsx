@@ -67,7 +67,7 @@ const Intro = () => {
                 src={Me}
                 className="rounded-lg z-800 mt-8"
                 alt="avatar pic"
-                width={320}
+                width={240}
                 height={200}
               />
             </div>
