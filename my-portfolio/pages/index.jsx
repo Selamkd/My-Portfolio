@@ -5,7 +5,10 @@ import Header from '../components/Header';
 export default function Home() {
   return (
     <main className="flex flex-col h-[100dvh] overflow-hidden">
-      <Header />
+      <div className="">
+        <Header />
+      </div>
+
       <Portfolio />
     </main>
   );
