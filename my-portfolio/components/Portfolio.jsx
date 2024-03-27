@@ -85,7 +85,7 @@ const LandingPage = () => {
         return (
           <Image
             id="weather-icon"
-            src={sun}
+            src={clouds}
             alt="Sun Icon"
             width={200}
             height={200}
@@ -96,7 +96,7 @@ const LandingPage = () => {
       case 'rainy':
         return <Image src={clouds} alt="Rain Icon" width={220} height={220} />;
       default:
-        return <Image src={sun} alt="Sun Icon" width={220} height={220} />;
+        return <Image src={clouds} alt="Sun Icon" width={220} height={220} />;
     }
   };
 
@@ -207,7 +207,7 @@ const LandingPage = () => {
           </motion.div>
           <motion.div
             id="avatar-img"
-            initial={{ x: '98%', y: '155%', scale: 1.3 }}
+            initial={{ x: '98%', y: '135%', scale: 1.6 }}
             animate={
               scrolled && !isMobile
                 ? {
