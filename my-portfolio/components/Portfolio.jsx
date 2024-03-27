@@ -107,31 +107,31 @@ const LandingPage = () => {
           id="mobile-home "
           className="w-full  flex flex-col h-screen justify-center items-between relative"
         >
-          <div className="flex flex-col items-center justify-between"></div>
-
-          <div className="mt-1">
-            <Image src={Avatar} alt="avatar" width={600} height={450} />
+          <div className="flex flex-col items-center justify-between">
+            <div className="mt-1">
+              <Image src={Avatar} alt="avatar" width={600} height={450} />
+            </div>
+            <h1 className="text-2xl mt-7 text-purple text-center">
+              {' '}
+              Selam Ararsa
+            </h1>
+            <div className="">
+              <h3 className="text-sm mt-4 text-blue-100 text-center">
+                Full-stack developer
+              </h3>
+            </div>
+            <motion.div className="absolute  bottom-0 right-[50%]">
+              <Link href="/about">
+                <svg className="arrows">
+                  <path
+                    strokeLinecap="round"
+                    className="a1"
+                    d="M0 0 L20 22 L40 0"
+                  ></path>
+                </svg>
+              </Link>
+            </motion.div>
           </div>
-          <h1 className="text-2xl mt-7 text-purple text-center">
-            {' '}
-            Selam Ararsa
-          </h1>
-          <div className="">
-            <h3 className="text-sm mt-4 text-blue-100 text-center">
-              Full-stack developer
-            </h3>
-          </div>
-          <motion.div className="absolute  bottom-0 right-[50%]">
-            <Link href="/about">
-              <svg className="arrows">
-                <path
-                  strokeLinecap="round"
-                  className="a1"
-                  d="M0 0 L20 22 L40 0"
-                ></path>
-              </svg>
-            </Link>
-          </motion.div>
         </section>
       ) : (
         <section className="w-full overflow-hidden flex flex-col h-screen justify-center items-center relative">
