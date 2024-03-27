@@ -103,7 +103,10 @@ const LandingPage = () => {
   return (
     <>
       {isMobile ? (
-        <section className="w-full  flex flex-col h-screen justify-center items-between relative">
+        <section
+          id="mobile-home "
+          className="w-full  flex flex-col h-screen justify-center items-between relative"
+        >
           <div className="flex flex-col items-center justify-between"></div>
 
           <div className="mt-1">
