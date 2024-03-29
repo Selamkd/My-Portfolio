@@ -304,7 +304,6 @@ const Projects = () => {
         >
           blaziken
         </a>
-        {/* <a href="#" className={`slide-nav ${current === 4 ? 'active' : ''}`} onClick={(e) => handleSlideClick(e, 4)}>dialga</a> */}
       </div>
     </>
   );

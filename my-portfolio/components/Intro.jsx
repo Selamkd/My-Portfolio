@@ -11,6 +11,7 @@ import yellowArrow from '../public/pic-arrow.png';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Twinkle_Star } from 'next/font/google';
+import heading from '../public/intro-heading.png';
 const Intro = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -174,7 +175,7 @@ const Intro = () => {
             </div>
             {/* Text and Arrow */}
             <div className="md:px-3 w-[80%] ">
-              <h2>Hello</h2>
+              <Image src={heading} alt="avatar pic" width={240} height={230} />
               <p className="text--normal ">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -200,13 +201,13 @@ const Intro = () => {
               </Link>
             </div>
 
-            <div className="absolute bottom-20 left-0 flex justify-center mr-36  w-[100%]">
-              <Image
+            <div className="absolute bottom-20 left-0 flex justify-center  w-[100%]">
+              {/* <Image
                 src={yellowArrow}
                 alt="avatar pic"
                 width={220}
                 height={220}
-              />
+              /> */}
             </div>
           </div>
           <div className="flex w-full justify-end fixed bottom-10">
