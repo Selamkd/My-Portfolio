@@ -74,21 +74,14 @@ export default function Projects() {
           <div className="flex flex-col mt-4 ml-2 gap-3 items-start justify-start">
             <div>
               <div className=" flex justify-start mr-3">
-                <Image
-                  src={Icon}
-                  alt="icon"
-                  className="mr-3 mb-1"
-                  width={40}
-                  height={30}
-                />
-                <h2 className="text-projects text-bold text-white  uppercase  mt-2">
+                <h2 className="text-projects text-bold text-white  uppercase  ml-2 mt-2">
                   Attract
                 </h2>
               </div>
               <Image
                 src={underlineGreen}
                 alt="icon"
-                className=" mb-5 ml-8"
+                className=" mb-5 "
                 width={140}
                 height={30}
               />
@@ -108,13 +101,6 @@ export default function Projects() {
             </div>
             <div>
               <div className=" flex justify-start">
-                <Image
-                  src={Icon}
-                  alt="icon"
-                  className="mr-3 mb-1"
-                  width={40}
-                  height={30}
-                />
                 <h2 className="text-projects text-bold text-white  uppercase  mt-2">
                   Hack-a-fun
                 </h2>
@@ -122,7 +108,7 @@ export default function Projects() {
               <Image
                 src={underlineBlue}
                 alt="icon"
-                className="mr-2 mb-1 ml-8"
+                className=" mb-1 mr-3 "
                 width={180}
                 height={30}
               />
@@ -142,13 +128,6 @@ export default function Projects() {
 
             <div>
               <div className=" flex justify-start">
-                <Image
-                  src={Icon}
-                  alt="icon"
-                  className="mr-3 mb-2"
-                  width={40}
-                  height={30}
-                />
                 <h2 className="text-projects text-bold text-white  uppercase  mt-2">
                   Champ Select
                 </h2>
@@ -156,7 +135,7 @@ export default function Projects() {
               <Image
                 src={underlineBlue2}
                 alt="icon"
-                className="mr-2 mb-2 ml-8"
+                className="mr-2 mb-2 "
                 width={180}
                 height={30}
               />
