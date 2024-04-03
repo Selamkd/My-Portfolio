@@ -74,13 +74,31 @@ const Intro = () => {
             </div>
             <div className="flex items-center justify-center gap-8">
               <Link href="https://github.com/Selamkd">
-                <Image src={Github} alt="avatar pic" width={40} height={30} />
+                <Image
+                  src={Github}
+                  alt="avatar pic"
+                  width={40}
+                  height={30}
+                  target="_blank"
+                />
               </Link>
               <Link href="https://www.linkedin.com/in/selam-ararsa-39937126b/">
-                <Image src={Linkeden} alt="avatar pic" width={40} height={30} />
+                <Image
+                  src={Linkeden}
+                  alt="avatar pic"
+                  width={40}
+                  height={30}
+                  target="_blank"
+                />
               </Link>
-              <Link href="https://www.linkedin.com/in/selam-ararsa-39937126b/">
-                <Image src={Mail} alt="avatar pic" width={40} height={30} />
+              <Link href="mailto:selamk23@gmail.com">
+                <Image
+                  src={Mail}
+                  alt="avatar pic"
+                  width={40}
+                  height={30}
+                  target="_blank"
+                />
               </Link>
             </div>
           </div>
@@ -156,11 +174,14 @@ const Intro = () => {
                   height={200}
                 />
               </div>
-              <div className="flex items-center justify-center gap-8">
-                <Link href="https://github.com/Selamkd">
+              <div className="flex items-center justify-start gap-8 mb-20">
+                <Link href="https://github.com/Selamkd " target="_blank">
                   <Image src={Github} alt="avatar pic" width={40} height={30} />
                 </Link>
-                <Link href="https://www.linkedin.com/in/selam-ararsa-39937126b/">
+                <Link
+                  href="https://www.linkedin.com/in/selam-ararsa-39937126b/"
+                  target="_blank"
+                >
                   <Image
                     src={Linkeden}
                     alt="avatar pic"
@@ -168,7 +189,7 @@ const Intro = () => {
                     height={30}
                   />
                 </Link>
-                <Link href="https://www.linkedin.com/in/selam-ararsa-39937126b/">
+                <Link href="mailto:selamk23@gmail.com">
                   <Image src={Mail} alt="avatar pic" width={40} height={30} />
                 </Link>
               </div>

@@ -4,7 +4,9 @@ import Header from '../components/Header';
 export default function Contact() {
   return (
     <main className="flex flex-col h-screen">
-      <Header className="top-0  absolute" />
+      <div className="sticky top-0 sm:top-2 w-full ">
+        <Header className=" " />
+      </div>
       <Form />
     </main>
   );
