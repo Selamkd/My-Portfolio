@@ -14,7 +14,7 @@ import { getPositionText } from './helpers';
 import { getPositionTextsm } from './helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-
+import underlineBlue from '../public/underline-blue2.png';
 const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
   const [weather, setWeather] = useState(null);
@@ -113,9 +113,16 @@ const LandingPage = () => {
             </div>
             <h1 className="text-2xl  text-purple text-center"> Selam Ararsa</h1>
             <div className="">
-              <h3 className="text-sm mt-2 text-blue-100 text-center">
+              <h3 className="text-sm mt-4 text-blue-100 text-center">
                 Full-stack developer
               </h3>
+              <Image
+                src={underlineBlue}
+                alt="icon"
+                className=" mb-1 absolute left-[30%] "
+                width={180}
+                height={30}
+              />
             </div>
             <motion.div className="absolute  bottom-0 right-[50%]">
               <Link href="/about">
