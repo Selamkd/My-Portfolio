@@ -74,19 +74,26 @@ export default function Projects() {
           <div className="flex flex-col mt-4 ml-2 gap-3 items-start justify-start">
             <div>
               <div className=" flex justify-start mr-3">
-                <h2 className="text-projects text-bold text-white  uppercase  ml-2 mt-2">
+                <Image
+                  src={Icon}
+                  alt="icon"
+                  className="  "
+                  width={40}
+                  height={20}
+                />
+                <h2 className="text--small text-bold   uppercase  ml-3 mt-2">
                   Attract
                 </h2>
               </div>
               <Image
                 src={underlineGreen}
                 alt="icon"
-                className=" mb-5 "
+                className=" ml-9  "
                 width={140}
                 height={30}
               />
 
-              <p className="text--normal text-white">
+              <p className="text--normal text-white p-3">
                 {' '}
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -101,14 +108,21 @@ export default function Projects() {
             </div>
             <div>
               <div className=" flex justify-start">
-                <h2 className="text-projects text-bold text-white  uppercase  mt-2">
+                <Image
+                  src={Icon}
+                  alt="icon"
+                  className="  "
+                  width={40}
+                  height={20}
+                />
+                <h2 className="text--small text-bold text-white ml-3  uppercase  mt-2">
                   Hack-a-fun
                 </h2>
               </div>
               <Image
                 src={underlineBlue}
                 alt="icon"
-                className=" mb-1 mr-3 "
+                className=" mb-1 ml-9 "
                 width={180}
                 height={30}
               />
@@ -128,14 +142,21 @@ export default function Projects() {
 
             <div>
               <div className=" flex justify-start">
-                <h2 className="text-projects text-bold text-white  uppercase  mt-2">
+                <Image
+                  src={Icon}
+                  alt="icon"
+                  className="  "
+                  width={40}
+                  height={20}
+                />
+                <h2 className="text--small text-bold text-white  uppercase ml-3  mt-2">
                   Champ Select
                 </h2>
               </div>
               <Image
                 src={underlineBlue2}
                 alt="icon"
-                className="mr-2 mb-2 "
+                className="ml-14 mb-2 "
                 width={180}
                 height={30}
               />
@@ -153,7 +174,7 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <Link href="/projects">
+          <Link href="/contact">
             <svg className="arrows">
               <path
                 strokeLinecap="round"
