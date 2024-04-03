@@ -62,6 +62,25 @@ const ContactForm = () => {
 
                 {!toggle ? (
                   <form>
+                    <div class="flex items-center justify-end w-full mb-12">
+                      <label
+                        for="toogleA"
+                        class="flex items-end cursor-pointer"
+                      >
+                        <div class="relative">
+                          <input
+                            onClick={handleToggle}
+                            id="toogleA"
+                            type="checkbox"
+                            class="sr-only"
+                          />
+
+                          <div class="w-10 h-4 bg-gray-600 rounded-full shadow-inner"></div>
+
+                          <div class="dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition"></div>
+                        </div>
+                      </label>
+                    </div>
                     <div class="mb-6">
                       <input
                         type="text"
@@ -151,25 +170,26 @@ const ContactForm = () => {
                   </form>
                 ) : (
                   <form>
-                    <div class="mb-6">
-                      <div className="love flex justify-end mb-10">
-                        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                    <div class="flex items-center justify-end w-full mb-12">
+                      <label
+                        for="toogleA"
+                        class="flex items-end cursor-pointer"
+                      >
+                        <div class="relative">
                           <input
                             onClick={handleToggle}
+                            id="toogleA"
                             type="checkbox"
-                            name="toggle"
-                            id="toggle"
-                            class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-purple border-4 appearance-none cursor-pointer"
+                            class="sr-only"
                           />
-                          <label
-                            for="toggle"
-                            class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-                          ></label>
+
+                          <div class="w-10 h-4 bg-gray-600 rounded-full shadow-inner"></div>
+
+                          <div class="dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition"></div>
                         </div>
-                        <label for="toggle" class="text-xs text-gray-700">
-                          Toggle me.
-                        </label>
-                      </div>
+                      </label>
+                    </div>
+                    <div class="mb-6">
                       <input
                         type="text"
                         placeholder="Your Name"
