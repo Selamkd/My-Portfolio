@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Permanent+Marker&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap');
 @font-face {
   font-family: Chromium;
   src: url(../Fonts/Chromium/chromiumoned.ttf);
@@ -34,6 +33,12 @@ h1 {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 
+  color: #fff;
+}
+.text-projects {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: #fff;
 }
 #greet {
@@ -223,7 +228,7 @@ h3 {
   font-family: 'Poppins', sans-serif;
 
   color: rgba(255, 255, 255, 0.2);
-  font-size: 170px;
+  font-size: 50px;
   font-weight: 700;
 }
 

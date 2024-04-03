@@ -94,13 +94,6 @@ const Projects = () => {
 
   return (
     <>
-      {isMobile && (
-        <div className="w-full bg-white flex flex-col items-center">
-          {/* Image and social links */}
-          <h3>Hello</h3>
-        </div>
-      )}
-
       {!isMobile && (
         <div className="slider__warpper">
           <div
