@@ -13,7 +13,14 @@
   font-family: CooperHewitt;
   src: url(../Fonts/cooper-hewitt/CooperHewitt-Medium.otf);
 }
-
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
 body {
   background-color: #21252b;
   -webkit-overflow-scrolling: touch;
@@ -214,9 +221,7 @@ h3 {
 }
 .text__background {
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  left: 72px;
-  bottom: -60px;
+
   color: rgba(255, 255, 255, 0.2);
   font-size: 170px;
   font-weight: 700;
