@@ -20,7 +20,9 @@ import { RiSupabaseLine } from 'react-icons/ri';
 import { SiPlaywright } from 'react-icons/si';
 import { FaCss3 } from 'react-icons/fa';
 import { FaHtml5 } from 'react-icons/fa';
-
+import underlineGreen from '../public/underline-green.png';
+import underlineBlue from '../public/underline-blue.png';
+import underlineBlue2 from '../public/underline-blue2.png';
 import { SiJest } from 'react-icons/si';
 export default function Projects() {
   const [modal, setModal] = useState(false);
@@ -68,38 +70,29 @@ export default function Projects() {
       {isMobile ? (
         <div className="w-screen h-screen m-1  ">
           <Header />
-          {/* Image and social links */}
 
-          {/* <Image src={underline} alt="icon" width={550} height={50} /> */}
-
-          <div className="flex flex-col mt-2 ml-2 items-start justify-start">
+          <div className="flex flex-col mt-4 ml-2 gap-12 items-start justify-start">
             <div>
-              <div className=" flex justify-center mr-6">
+              <div className=" flex justify-start mr-3">
                 <Image
                   src={Icon}
                   alt="icon"
-                  className="mr-2 mb-2"
+                  className="mr-3 mb-1"
                   width={40}
                   height={30}
                 />
-                <h2 className="text-projects tuppercase  mt-1">Attract</h2>
+                <h2 className="text-projects text-bold text-white  uppercase  mt-2">
+                  Attract
+                </h2>
               </div>
-              <div className="flex items-center justify-around ml-4 mt-1">
-                <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                <svg
-                  class="w-10 h-10 text-4xl "
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  id="tailwind-icon"
-                >
-                  <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                </svg>
-                <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
-              </div>
+              <Image
+                src={underlineGreen}
+                alt="icon"
+                className=" mb-5 ml-8"
+                width={140}
+                height={30}
+              />
+
               <p className="text--normal text-white">
                 {' '}
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -118,30 +111,21 @@ export default function Projects() {
                 <Image
                   src={Icon}
                   alt="icon"
-                  className="mr-3 mb-2"
+                  className="mr-3 mb-1"
                   width={40}
                   height={30}
                 />
                 <h2 className="text-projects text-bold text-white  uppercase  mt-2">
-                  Attract
+                  Hack-a-fun
                 </h2>
               </div>
-              <div className="flex items-center justify-around ml-4 mt-1">
-                <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                <svg
-                  class="w-10 h-10 text-4xl "
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  id="tailwind-icon"
-                >
-                  <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                </svg>
-                <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
-              </div>
+              <Image
+                src={underlineBlue}
+                alt="icon"
+                className="mr-2 mb-1 ml-8"
+                width={180}
+                height={30}
+              />
               <p className="text--normal text-white">
                 {' '}
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -166,25 +150,16 @@ export default function Projects() {
                   height={30}
                 />
                 <h2 className="text-projects text-bold text-white  uppercase  mt-2">
-                  Attract
+                  Champ Select
                 </h2>
               </div>
-              <div className="flex items-center justify-around ml-4 mt-1">
-                <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                <svg
-                  class="w-10 h-10 text-4xl "
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  id="tailwind-icon"
-                >
-                  <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                </svg>
-                <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
-              </div>
+              <Image
+                src={underlineBlue2}
+                alt="icon"
+                className="mr-2 mb-2 ml-8"
+                width={180}
+                height={30}
+              />
               <p className="text--normal text-white">
                 {' '}
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
