@@ -71,7 +71,7 @@ export default function Projects() {
         <div className="w-screen h-screen m-1  ">
           <Header />
 
-          <div className="flex flex-col mt-4 ml-2 gap-12 items-start justify-start">
+          <div className="flex flex-col mt-4 ml-2 gap-3 items-start justify-start">
             <div>
               <div className=" flex justify-start mr-3">
                 <Image
