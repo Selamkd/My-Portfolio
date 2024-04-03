@@ -33,7 +33,7 @@ const SpotifyPlayer = (props) => {
   const spotifyEmbedUrl = `https://open.spotify.com/embed/track/${filteredTracks[currentTrackIndex]?.trackId}`;
 
   return (
-    <div>
+    <div className="absolute mt-[22rem] ">
       <iframe
         src={spotifyEmbedUrl}
         width="320"
@@ -83,38 +83,6 @@ const SpotifyPlayer = (props) => {
               class="w-8 h-8 text-white hover:text-purple   "
               onClick={props.refresh}
             />
-
-            <button
-              onClick={() => {
-                props.closeModal();
-                props.restart();
-              }}
-              className="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-              aria-label="close"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18 6L6 18"
-                  stroke="currentColor"
-                  strokeWidth="1.66667"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M6 6L18 18"
-                  stroke="currentColor"
-                  strokeWidth="1.66667"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

@@ -21,12 +21,12 @@ const ModalContent = (props) => {
         <div className="relative flex justify-center z-10 items-start">
           <div
             id="menu"
-            className={`w-full h-full bg-gray-900 z-900 bg-opacity-80 top-0 fixed sticky-0 ${
+            className={`w-full h-full bg-gray-900 z-900 bg-opacity-80 fixed sticky-0 ${
               props.modal ? 'block' : 'hidden'
             }`}
           >
             {!start ? (
-              <div className="2xl:container   2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
+              <div className="2xl:container absolute  2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
                 <div className="w-96 lg:h-500  md:w-auto  bg-gray-800 relative flex flex-col  justify-center items-center  py-16 px-4 md:px-24 xl:py-24 xl:px-36">
                   <div role="banner ">
                     <SlSocialSpotify size={123} className="text-[#1DB954]" />
