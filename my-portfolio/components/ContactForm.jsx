@@ -1,17 +1,44 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Linkeden from '../public/Linkeden.png';
 import Mail from '../public/Mail.png';
 import Github from '../public/Github.png';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import emailjs from 'emailjs-com';
+import React, { useState, useRef } from 'react';
 const ContactForm = () => {
   const [toggle, setToggle] = useState(false);
+  let serviceId = 'portfolio-contact';
+  let templateId = 'contact-form';
+  let publicKey = 'Hg0H7DhSE_CK3X3_R';
+  emailjs.init(publicKey);
+
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_email: '',
+    message: '',
+  });
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(serviceId, templateId, e.target, publicKey).then(
+      (result) => {
+        console.log('Email sent successfully:', result.text);
+      },
+      (error) => {
+        console.error('Email sending failed:', error.text);
+      }
+    );
+    e.target.reset();
+  };
   return (
     <div class="container sm:border-solid  mx-auto md:px-6">
       <section class="mb-32">
@@ -68,7 +95,7 @@ const ContactForm = () => {
                 <h1 class="text--normal text-neutral-300"></h1>
 
                 {!toggle ? (
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div class="flex items-center justify-end w-full mb-12">
                       <label
                         for="toogleA"
@@ -92,84 +119,71 @@ const ContactForm = () => {
                       <input
                         type="text"
                         placeholder="Your Name"
+                        onChange={handleChange}
                         class="
-                        w-full
-                        rounded
-                        py-3
-                        px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                         w-full
+                         rounded
+                         py-3
+                         px-[14px]
+                         text-body-color text-base
+                         border border-[f0f0f0]
+                         outline-none
+                         focus-visible:shadow-none
+                         focus:border-primary
+                         "
                       />
                     </div>
                     <div class="mb-6">
                       <input
                         type="email"
                         placeholder="Your Email"
+                        onChange={handleChange}
                         class="
-                        w-full
-                        rounded
-                        py-3
-                        px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                         w-full
+                         rounded
+                         py-3
+                         px-[14px]
+                         text-body-color text-base
+                         border border-[f0f0f0]
+                         outline-none
+                         focus-visible:shadow-none
+                         focus:border-primary
+                         "
                       />
                     </div>
-                    <div class="mb-6">
-                      <input
-                        type="text"
-                        placeholder="Your Phone"
-                        class="
-                        w-full
-                        rounded
-                        py-3
-                        px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
-                      />
-                    </div>
+
                     <div class="mb-6">
                       <textarea
                         rows="6"
                         placeholder="Your Message"
+                        onChange={handleChange}
                         class="
-                        w-full
-                        rounded
-                        py-3
-                        px-[14px]
-                        text-body-color text-base
-                        border border-[f0f0f0]
-                        resize-none
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                         w-full
+                         rounded
+                         py-3
+                         px-[14px]
+                         text-body-color text-base
+                         border border-[f0f0f0]
+                         resize-none
+                         outline-none
+                         focus-visible:shadow-none
+                         focus:border-primary
+                         "
                       ></textarea>
                     </div>
                     <div>
                       <button
                         type="submit"
                         class="
-                        w-full
-                        text-white
-                        bg-primary
-                        rounded
-                        border border-primary
-                        p-3
-                        transition
-                        hover:bg-opacity-90
-                        "
+                         w-full
+                         text-white
+                         bg-primary
+                         rounded
+                         border border-primary
+                         p-3
+                         transition
+                         hover:bg-opacity-90
+                         "
                       >
                         Send Message
                       </button>
