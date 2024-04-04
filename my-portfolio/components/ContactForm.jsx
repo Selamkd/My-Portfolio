@@ -119,6 +119,7 @@ const ContactForm = () => {
                       <input
                         type="text"
                         placeholder="Your Name"
+                        name="user_name"
                         onChange={handleChange}
                         class="
                          w-full
@@ -136,6 +137,7 @@ const ContactForm = () => {
                     <div class="mb-6">
                       <input
                         type="email"
+                        name="user_email"
                         placeholder="Your Email"
                         onChange={handleChange}
                         class="
@@ -155,6 +157,7 @@ const ContactForm = () => {
                     <div class="mb-6">
                       <textarea
                         rows="6"
+                        name="message"
                         placeholder="Your Message"
                         onChange={handleChange}
                         class="
@@ -190,7 +193,7 @@ const ContactForm = () => {
                     </div>
                   </form>
                 ) : (
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div class="flex items-center justify-end w-full mb-12">
                       <label
                         for="toogleA"
@@ -214,6 +217,8 @@ const ContactForm = () => {
                       <input
                         type="text"
                         placeholder="Your Name"
+                        name="user_name"
+                        onChange={handleChange}
                         class="
                       w-full
                       rounded
@@ -227,44 +232,13 @@ const ContactForm = () => {
                       "
                       />
                     </div>
-                    <div class="mb-6">
-                      <input
-                        type="email"
-                        placeholder="Your Email (Optional)"
-                        class="
-                      w-full
-                      rounded
-                      py-3
-                      px-[14px]
-                      text-body-color text-base
-                      border border-[f0f0f0]
-                      outline-none
-                      focus-visible:shadow-none
-                      focus:border-primary
-                      "
-                      />
-                    </div>
-                    <div class="mb-6">
-                      <input
-                        type="text"
-                        placeholder="Your Phone(Optional)"
-                        class="
-                      w-full
-                      rounded
-                      py-3
-                      px-[14px]
-                      text-body-color text-base
-                      border border-[f0f0f0]
-                      outline-none
-                      focus-visible:shadow-none
-                      focus:border-primary
-                      "
-                      />
-                    </div>
+
                     <div class="mb-6">
                       <textarea
                         rows="6"
+                        name="message"
                         placeholder="Your Message"
+                        onChange={handleChange}
                         class="
                       w-full
                       rounded
