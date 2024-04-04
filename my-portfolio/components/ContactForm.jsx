@@ -15,19 +15,19 @@ const ContactForm = () => {
   return (
     <div class="container sm:border-solid  mx-auto md:px-6">
       <section class="mb-32">
-        <div class="flex flex-wrap items-start mt-1 sm:mt-8 justify-start">
+        <div class="contact-container flex flex-wrap items-start mt-2 sm:mt-8 justify-start">
           <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             {toggle ? (
-              <h2 class="text--middle  sm:text--big md:text text-neutral-300">
+              <h2 class="contact-text text--big   text-neutral-300">
                 Leave feedback
               </h2>
             ) : (
-              <h2 class="text--middle sm:text--big text-neutral-300">
+              <h2 class="contact-text  text--big  text-neutral-300">
                 Contact Me
               </h2>
             )}
             {toggle ? (
-              <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+              <p class="contact-p mb-6 text-neutral-500 dark:text-neutral-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Laudantium, modi accusantium ipsum corporis quia asperiores
                 dolorem nisi corrupti eveniet dolores ad maiores repellendus
@@ -36,7 +36,7 @@ const ContactForm = () => {
                 corrupti eveniet dolores ad maiores repellendus enim
               </p>
             ) : (
-              <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+              <p class="contact-p mb-6 text-neutral-500 dark:text-neutral-300">
                 {' '}
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Laudantium, modi accusantium ipsum corporis quia asperiores
@@ -46,7 +46,7 @@ const ContactForm = () => {
                 corrupti eveniet dolores ad maiores repellendus enim
               </p>
             )}
-            <div className="flex items-center justify-start gap-10">
+            <div className=" contact-buttons flex items-center justify-start gap-10">
               <Link href="https://github.com/Selamkd" target="_blank">
                 <Image src={Github} alt="avatar pic" width={40} height={30} />
               </Link>

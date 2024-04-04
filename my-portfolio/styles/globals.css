@@ -516,6 +516,20 @@ input:checked ~ .dot {
     border: 1px solid yellow;
     display: none;
   }
+  .contact-text {
+    font-size: 2.5em;
+    margin-bottom: 0 !important;
+  }
+  .contact-container {
+    text-align: center;
+  }
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .contact-p {
+    margin-top: 0;
+  }
 }
 @media not all and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari-specific styles */
