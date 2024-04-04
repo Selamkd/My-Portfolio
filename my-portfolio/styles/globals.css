@@ -217,6 +217,13 @@ h3 {
 
   color: rgba(255, 255, 255, 0.8);
 }
+.text--middle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .text--normal {
   font-size: 13px;

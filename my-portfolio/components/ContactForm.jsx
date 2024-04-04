@@ -15,12 +15,16 @@ const ContactForm = () => {
   return (
     <div class="container sm:border-solid  mx-auto md:px-6">
       <section class="mb-32">
-        <div class="flex flex-wrap items-start mt-8 justify-start">
+        <div class="flex flex-wrap items-start mt-1 sm:mt-8 justify-start">
           <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             {toggle ? (
-              <h2 class="text--big md:text text-neutral-300">Leave feedback</h2>
+              <h2 class="text--middle  sm:text--big md:text text-neutral-300">
+                Leave feedback
+              </h2>
             ) : (
-              <h2 class="text--big text-neutral-300">Contact Me</h2>
+              <h2 class="text--middle sm:text--big text-neutral-300">
+                Contact Me
+              </h2>
             )}
             {toggle ? (
               <p class="mb-6 text-neutral-500 dark:text-neutral-300">
@@ -58,7 +62,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div class="mb-12 w-full items-center mt-7 shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+          <div class="mb-12 w-full items-center mt-1 sm:mt-7 shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             <div class="w-full md:w-96 md:max-w-full mx-auto">
               <div class="p-6 border border-gray-300 sm:rounded-md">
                 <h1 class="text--normal text-neutral-300"></h1>
