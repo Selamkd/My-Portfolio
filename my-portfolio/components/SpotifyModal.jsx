@@ -17,16 +17,14 @@ const ModalContent = (props) => {
   };
   return (
     <>
-      <section>
-        <div className="relative flex justify-center z-10 items-start">
+      <section className=" z-50">
+        <div id="menu" className={` ${props.modal ? 'block' : 'hidden'}`}>
           <div
             id="menu"
-            className={`w-full h-full bg-gray-900 z-900 bg-opacity-80 fixed sticky-0 ${
-              props.modal ? 'block' : 'hidden'
-            }`}
+            className="fixed left-0 top-0  flex items-center justify-center  pointer-events-none  w-full h-screen bg-gray-900 z-900  py-6 bg-opacity-80  sticky-0 "
           >
             {!start ? (
-              <div className="2xl:container absolute  2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
+              <div className="2xl:container  2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
                 <div className="w-96 lg:h-500  md:w-auto  bg-gray-800 relative flex flex-col  justify-center items-center  py-16 px-4 md:px-24 xl:py-24 xl:px-36">
                   <div role="banner ">
                     <SlSocialSpotify size={123} className="text-[#1DB954]" />
@@ -53,20 +51,20 @@ const ModalContent = (props) => {
                   <button
                     onClick={handleStart}
                     id="modal-btn"
-                    className="btn  mt-10 "
+                    className="btn  mt-10 pointer-events-auto"
                   >
                     {' '}
                     Let's go!
                   </button>
                   <a
                     onClick={props.closeModal}
-                    className="mt-6 dark:text-white text-base leading-none focus:outline-none hover:border-purple focus:border-purple border-b border-transparent text-center text-gray-800"
+                    className="mt-6 pointer-events-auto dark:text-white text-base leading-none focus:outline-none hover:border-purple focus:border-purple border-b border-transparent text-center text-gray-800"
                   >
                     Nope...get me out!
                   </a>
                   <button
                     onClick={props.closeModal}
-                    className="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                    className="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 pointer-events-auto"
                     aria-label="close"
                   >
                     <svg

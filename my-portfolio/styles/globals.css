@@ -530,6 +530,9 @@ input:checked ~ .dot {
   .contact-p {
     margin-top: 0;
   }
+  .container {
+    margin-top: 0px;
+  }
 }
 @media not all and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari-specific styles */

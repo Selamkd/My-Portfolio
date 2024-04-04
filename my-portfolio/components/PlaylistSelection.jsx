@@ -21,14 +21,14 @@ export default function PlaylistSelection(props) {
     <section>
       <div
         id="menu"
-        className={`w-full h-screen bg-gray-900 z-900  py-6 bg-opacity-80 top-40 fixed sticky-0`}
+        className={`fixed left-0 top-0  flex flex-col  items-center justify-center pointer-events-none  w-full h-screen bg-gray-900 z-900  py-2 bg-opacity-80  sticky-0`}
       >
-        <div role="banner mt-[20%]">
+        <div role=" ">
           {!selectedMood ? (
             <h1 className="text-3xl mb-6">Choose your current mood</h1>
           ) : null}
         </div>
-        <div className="flex justify-center items-center mt-8 flex-wrap">
+        <div className="flex justify-center items-start mt-1 flex-wrap">
           {selectedMood ? (
             <SpotifyPlayer
               mood={selectedMood}
@@ -43,6 +43,7 @@ export default function PlaylistSelection(props) {
                   onClick={() => handleSelection('upbeat')}
                   role="img"
                   aria-label="Upbeat"
+                  className="pointer-events-auto hover:text-purple"
                 >
                   <Image
                     src={rainbow}
@@ -56,7 +57,7 @@ export default function PlaylistSelection(props) {
                   aria-label="Afrobeat"
                   style={{ fontSize: '78px' }}
                   onClick={() => handleSelection('dance')}
-                  className="hover:text-purple"
+                  className="hover:text-purple pointer-events-auto"
                 >
                   <Image
                     src={disco}
@@ -72,6 +73,7 @@ export default function PlaylistSelection(props) {
                   role="img"
                   aria-label="Chill"
                   onClick={() => handleSelection('chill')}
+                  className=" pointer-events-auto"
                 >
                   <Image
                     src={inLove}
@@ -85,6 +87,7 @@ export default function PlaylistSelection(props) {
                   aria-label="Calm"
                   style={{ fontSize: '48px' }}
                   onClick={() => handleSelection('calm')}
+                  className=" pointer-events-auto"
                 >
                   <Image src={sad} alt="Description" width={350} height={350} />
                 </span>
@@ -96,7 +99,7 @@ export default function PlaylistSelection(props) {
               props.closeModal();
               props.restart();
             }}
-            className="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+            className="text-gray-800       pointer-events-auto dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
             aria-label="close"
           >
             <svg

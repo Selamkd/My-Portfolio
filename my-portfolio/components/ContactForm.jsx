@@ -40,7 +40,7 @@ const ContactForm = () => {
     e.target.reset();
   };
   return (
-    <div class="container sm:border-solid  mx-auto md:px-6">
+    <div class="container sm:border-solid mt-10 mx-auto md:px-6">
       <section class="mb-32">
         <div class="contact-container flex flex-wrap items-start mt-2 sm:mt-8 justify-start">
           <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
