@@ -39,7 +39,7 @@ const SpotifyPlayer = (props) => {
   const spotifyEmbedUrl = `https://open.spotify.com/embed/track/${filteredTracks[currentTrackIndex]?.trackId}`;
 
   return (
-    <div className="fixed left-0 top-0 flex flex-col items-center justify-center pointer-events-auto mt-[8%] w-full h-[60%] bg-gray-900 z-900 py-8 bg-opacity-80 sticky-0">
+    <div className="spotify-player fixed left-0 top-0 flex flex-col items-center justify-center pointer-events-auto mt-[8%] w-full h-[60%] bg-gray-900 z-900 py-8 bg-opacity-80 sticky-0">
       <div className="bg-gray-800 bg-opacity-40 p-6 px-9 rounded-lg shadow-md w-120 relative">
         <iframe
           id="spotify-player"

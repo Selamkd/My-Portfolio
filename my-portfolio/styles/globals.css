@@ -288,8 +288,6 @@ h3 {
   opacity: 1;
 }
 
-
-
 .flex--piplup .flex__item--left {
   background: #21252b;
 }
@@ -301,8 +299,6 @@ h3 {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-
 
 .flex--pikachu .flex__item--left {
   background: #21252b;
@@ -337,8 +333,6 @@ h3 {
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s linear 0.2s, opacity 0.1s linear 0.2s;
 }
-
-
 
 .flex__container.animate--start .flex__content {
   transform: translate3d(0, -200%, 0);
@@ -503,6 +497,9 @@ input:checked ~ .dot {
   }
   .container {
     margin-top: 0px;
+  }
+  .spotify-player {
+    margin-top: 30%;
   }
 }
 @media not all and (-webkit-min-device-pixel-ratio: 0) {
