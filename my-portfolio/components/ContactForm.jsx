@@ -55,22 +55,16 @@ const ContactForm = () => {
             )}
             {toggle ? (
               <p class="contact-p mb-6 text-neutral-500 dark:text-neutral-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium, modi accusantium ipsum corporis quia asperiores
-                dolorem nisi corrupti eveniet dolores ad maiores repellendus
-                enim autem omnis fugiat perspiciatis? Ad, veritatis. Laudantium,
-                modi accusantium ipsum corporis quia asperiores dolorem nisi
-                corrupti eveniet dolores ad maiores repellendus enim
+                I am always looking to improve, so if you see anything on this
+                site that needs improvement please feel free to send any
+                feedback or just say hello ! Thank you. 🥰
               </p>
             ) : (
               <p class="contact-p mb-6 text-neutral-500 dark:text-neutral-300">
                 {' '}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium, modi accusantium ipsum corporis quia asperiores
-                dolorem nisi corrupti eveniet dolores ad maiores repellendus
-                enim autem omnis fugiat perspiciatis? Ad, veritatis. Laudantium,
-                modi accusantium ipsum corporis quia asperiores dolorem nisi
-                corrupti eveniet dolores ad maiores repellendus enim
+                Now that you got to know me, I would love to learn more about
+                you. Feel free to connect with me on LinkedIn or send me a
+                message using the form.
               </p>
             )}
             <div className=" contact-buttons flex items-center justify-start gap-10">

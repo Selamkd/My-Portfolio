@@ -105,16 +105,25 @@ const Intro = () => {
           {/* Text and Arrow */}
           <div className="md:px-3 w-[80%] mt-5 mb-7 ">
             <p className="text--normal mt-7 ">
-              Hi, Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam.
+              I’m Selam, a passionate full-stack developer who thrives in
+              collaborative and creative spaces where I can continuously learn
+              and grow.{' '}
+              <span className="ex3 ">I’m a creative problem-solver</span> who’s
+              passionate about supporting diverse people to get into tech.
+              <br></br> <br></br>I have recently made a career switch from
+              teaching to tech and after living on 4 continents and exploring so
+              many careers, I found software development and fell in love with
+              it as it perfectly aligns with{' '}
+              <span className="ex4 ">
+                my love for lifelong learning and solving problems.
+              </span>{' '}
+              Recently I’ve been learning Java to better understand Object
+              Oriented Programming and I will soon add a section to my portfolio
+              where you can follow along and keep up to date with what I’m
+              doing. (Come back in 2 weeks if you are interested)
+              <br></br> <br></br>
+              On the rare occasion when I’m not coding you can normally find me
+              in the gym, reading, or thinking about my next project.😂
             </p>
 
             {/* Arrow */}
@@ -198,16 +207,27 @@ const Intro = () => {
             <div className="md:px-3 w-[80%] ">
               <Image src={heading} alt="avatar pic" width={240} height={230} />
               <p className="text--normal ">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi
-                nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-                sit amet, consectetur, adipisci velit, sed quia non numquam eius
-                modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem. Ut enim ad minima veniam.
+                I’m Selam, a passionate full-stack developer who thrives in
+                collaborative and creative spaces where I can continuously learn
+                and grow.{' '}
+                <span className="ex3 ">I’m a creative problem-solver</span>{' '}
+                who’s passionate about supporting diverse people to get into
+                tech.
+                <br></br> <br></br>I have recently made a career switch from
+                teaching to tech and after living on 4 continents and exploring
+                so many careers, I found software development and fell in love
+                with it as it perfectly aligns with{' '}
+                <span className="ex4 ">
+                  my love for lifelong learning and solving problems.
+                </span>{' '}
+                <br></br> <br></br>
+                Recently I’ve been learning Java to better understand Object
+                Oriented Programming and I will soon add a section to my
+                portfolio where you can follow along and keep up to date with
+                what I’m doing. (Come back in 2 weeks if you are interested)
+                <br></br> <br></br>
+                On the rare occasion when I’m not coding you can normally find
+                me in the gym, reading, or thinking about my next project.😂
               </p>
 
               {/* Arrow */}

@@ -95,10 +95,23 @@ export default function Projects() {
 
               <p className="text--normal text-white p-3">
                 {' '}
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                Attract is a comprehensive well-being app that was created for
+                the{' '}
+                <Link
+                  className=" underline hover:text-purple"
+                  href="https://m4kingspaces.org/the-making-good-prize/about-the-prize/#:~:text=Entries%20for%20the%20Making%20Good,the%20results%20around%20May%202024.&text=Judges%20will%20assess%20entries%20using,design%20that%20is%20clearly%20presented"
+                  target="_blank"
+                >
+                  Making Good Prize{' '}
+                </Link>{' '}
+                submission. The app provides{' '}
+                <span className="ex3">daily affirmations</span> to help you
+                start your day on a positive note,{' '}
+                <span className="ex5">customizable breathing exercises,</span>{' '}
+                and a <span className="ex4">journaling feature</span> with daily
+                prompts to encourage self-reflection. Additionally, the app has
+                an authentication feature to ensure the privacy of your journal
+                entries.
               </p>
 
               <div className="mt-3 ml-6 gap-2 ">
@@ -128,10 +141,17 @@ export default function Projects() {
               />
               <p className="text--normal text-white">
                 {' '}
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                Hack-a-fun aims to support boot campers, graduates, and mentors
+                to team up and work on a 4-week Hackathon project. Users can
+                create a profile and join monthly hackathons, participate in
+                chat groups, and submit their projects to get feedback from
+                mentors. The main focus of the app is to
+                <span className="ex4">
+                  {' '}
+                  promote teamwork rather than individual contributions.
+                </span>{' '}
+                This app was developed by myself and my teammates as our final
+                project for SOC.
               </p>
 
               <div className="mt-3 ml-6 gap-2 ">

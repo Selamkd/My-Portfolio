@@ -114,20 +114,23 @@ const Projects = () => {
                 </div>
 
                 <p className="text--normal">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos
-                  <span>
-                    {' '}
-                    qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-                    est, qui dolorem ipsum quia dolor sit amet, consectetur
-                  </span>
-                  adipisci velit, sed quia non numquam eius modi tempora
-                  incidunt ut labore et dolore magnam aliquam quaerat
-                  voluptatem. Ut enim ad minima veniam.
+                  Attract is a comprehensive well-being app that was created for
+                  the{' '}
+                  <Link
+                    className=" underline hover:text-purple"
+                    href="https://m4kingspaces.org/the-making-good-prize/about-the-prize/#:~:text=Entries%20for%20the%20Making%20Good,the%20results%20around%20May%202024.&text=Judges%20will%20assess%20entries%20using,design%20that%20is%20clearly%20presented"
+                    target="_blank"
+                  >
+                    Making Good Prize{' '}
+                  </Link>{' '}
+                  submission. The app provides{' '}
+                  <span className="ex3">daily affirmations</span> to help you
+                  start your day on a positive note,{' '}
+                  <span className="ex5">customizable breathing exercises,</span>{' '}
+                  and a <span className="ex4">journaling feature</span> with
+                  daily prompts to encourage self-reflection. Additionally, the
+                  app has an authentication feature to ensure the privacy of
+                  your journal entries.
                 </p>
                 <div className="mt-3 ">
                   <button className="btn mr-2">Live</button>
@@ -190,16 +193,13 @@ const Projects = () => {
                   />
                 </div>
                 <p className="text--normal">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos qui ratione voluptatem sequi
-                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                  dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore et dolore magnam
-                  aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  ChampSelect is a web app created for League of Legends fans
+                  who want to find their next champion.The user answers a series
+                  of questions that define their play style, preferred region,
+                  and the role they wish to play. The app then suggests a
+                  champion based on the user's responses. The application{' '}
+                  <span className="ex4">utilises a custom REST API</span> to
+                  obtain champions data.
                 </p>
                 <div className="mt-3 ">
                   <button className="btn mr-2">Live</button>
@@ -253,16 +253,19 @@ const Projects = () => {
                   />
                 </div>
                 <p className="text--normal ">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos qui ratione voluptatem sequi
-                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                  dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore et dolore magnam
-                  aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                  Hack-a-fun aims to support boot campers, graduates, and
+                  mentors to team up and work on a 4-week Hackathon project.
+                  Users can <span className="ex3">create a profile </span>and
+                  join monthly hackathons,
+                  <span className="ex4">participate in chat groups </span>, and{' '}
+                  <span>submit their projects</span> to get feedback from
+                  mentors. The main focus of the app is to
+                  <span className="ex5">
+                    {' '}
+                    promote teamwork rather than individual contributions.
+                  </span>{' '}
+                  This app was developed by myself and my teammates as our final
+                  project for SOC.
                 </p>
                 <div className="mt-3 ">
                   <button className="btn mr-2">Live</button>

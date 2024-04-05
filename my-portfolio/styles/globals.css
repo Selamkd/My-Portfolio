@@ -174,6 +174,26 @@ h3 {
 .slider__navi a.active {
   background: rgba(255, 255, 255, 1);
 }
+.ex2 {
+  text-decoration-line: underline;
+  text-decoration-color: yellow;
+  text-decoration-style: wavy;
+}
+.ex3 {
+  text-decoration-line: underline;
+  text-decoration-color: palevioletred;
+  text-decoration-style: wavy;
+}
+.ex4 {
+  text-decoration-line: underline;
+  text-decoration-color: #c1ff72;
+  text-decoration-style: wavy;
+}
+.ex5 {
+  text-decoration-line: underline;
+  text-decoration-color: #7798bc;
+  text-decoration-style: wavy;
+}
 
 .flex__container {
   position: absolute;
@@ -217,7 +237,7 @@ h3 {
 }
 .text--small {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5em;
+  font-size: 2em !important ;
   font-weight: 700;
 
   color: rgba(255, 255, 255, 0.8);
@@ -231,7 +251,7 @@ h3 {
 }
 
 .text--normal {
-  font-size: 13px;
+  font-size: 1.1;
   color: rgba(255, 255, 255, 0.8);
   line-height: 22px;
   margin-top: 0;
