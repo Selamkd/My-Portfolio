@@ -207,9 +207,8 @@ const Intro = () => {
             <div className="md:px-3 w-[80%] ">
               <Image src={heading} alt="avatar pic" width={240} height={230} />
               <p className="text--normal ">
-                I’m Selam, a passionate full-stack developer who thrives in
-                collaborative and creative spaces where I can continuously learn
-                and grow.{' '}
+                I’m Selam, a full-stack developer who thrives in collaborative
+                and creative spaces where I can continuously learn and grow.{' '}
                 <span className="ex3 ">I’m a creative problem-solver</span>{' '}
                 who’s passionate about supporting diverse people to get into
                 tech.
