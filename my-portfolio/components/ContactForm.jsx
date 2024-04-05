@@ -62,9 +62,9 @@ const ContactForm = () => {
             ) : (
               <p class="contact-p mb-6 text-neutral-500 dark:text-neutral-300">
                 {' '}
-                Now that you got to know me, I would love to learn more about
-                you. Feel free to connect with me on LinkedIn or send me a
-                message using the form.
+                I’d love to hear from you! Please use the form to contact me! If
+                you’d like to tell me what you think of my projects and
+                portfolio! You can toggle the form to leave feedback!
               </p>
             )}
             <div className=" contact-buttons flex items-center justify-start gap-10">
