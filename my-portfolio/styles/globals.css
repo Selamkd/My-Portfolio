@@ -7,7 +7,12 @@
   font-family: Chromium;
   src: url(../Fonts/Chromium/chromiumoned.ttf);
 }
-
+@layer utilities {
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
 @font-face {
   font-family: CooperHewitt;
   src: url(../Fonts/cooper-hewitt/CooperHewitt-Medium.otf);
@@ -283,7 +288,7 @@ h3 {
   opacity: 1;
 }
 
-/* Piplup */
+
 
 .flex--piplup .flex__item--left {
   background: #21252b;
@@ -297,7 +302,7 @@ h3 {
   background-position: center;
 }
 
-/* Pikachu */
+
 
 .flex--pikachu .flex__item--left {
   background: #21252b;
@@ -325,30 +330,6 @@ h3 {
   background-position: center;
 }
 
-/* Dialga */
-
-/* .flex--dialga .flex__item--left {
-	background: #21252b;
-} */
-
-/* .flex--dialga .flex__item--right {
-	background-image:url('../public/Attract-bg.png');
-	background-color: #a7bcbb;
-	background-size:contain;
-	background-repeat: no-repeat;
-	background-position: center;
-} */
-
-/* Zekrom */
-
-/* .flex--zekrom .flex__item--left {
-	background: #424242;
-}
-
-.flex--zekrom .flex__item--right {
-	background: 	 rgba(255, 255, 255, 0.8);;
-} */
-
 .flex__content {
   margin-left: 80px;
   width: 55%;
@@ -357,17 +338,7 @@ h3 {
   transition: transform 0.2s linear 0.2s, opacity 0.1s linear 0.2s;
 }
 
-/* .pokemon__img {
-	position: absolute;
-	bottom: 20px;
-	right: 15%;
-	max-height: 40vw;
-	opacity: 1;
-	transform: translate3d(0,0,0);
-	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
-} */
 
-/* Animate-START point */
 
 .flex__container.animate--start .flex__content {
   transform: translate3d(0, -200%, 0);

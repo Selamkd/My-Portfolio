@@ -17,7 +17,7 @@ module.exports = {
         'secondary-500': '#FFB620',
         'off-white': '#D0DFFF',
         'red': '#FF5A5A',
-        'dark-1': '#000818',
+        'neonGreen': ' #c1ff72',
         'dark-2': '#0a131e',
         'dark-3': '#101012',
         'dark-4': '#1F1F22',
@@ -66,5 +66,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };
