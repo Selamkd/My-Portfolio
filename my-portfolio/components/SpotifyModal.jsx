@@ -25,42 +25,48 @@ const ModalContent = (props) => {
           >
             {!start ? (
               <div className="2xl:container  2xl:mx-auto py-48 l px-4 md:px-28 flex justify-center  lg:py-28 items-center">
-                <div className="w-96 lg:h-500  md:w-auto  bg-gray-800 relative flex flex-col  justify-center items-center  py-16 px-4 md:px-24 xl:py-24 xl:px-36">
-                  <div role="banner ">
+                <div className="w-96 lg:h-500  md:w-auto relative flex flex-col  justify-center items-center  bg-gray-800 bg-opacity-100 py-16 px-4 md:px-24 xl:py-24 xl:px-36">
+                  <div role="banner  ">
                     <SlSocialSpotify size={123} className="text-[#1DB954]" />
                   </div>
                   <div className="mt-12">
                     <h1
                       role="main"
-                      className="text-3xl   dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800"
+                      className="care-to text-4xl  text-center text-gray-800"
                     >
-                      <span className="text-purple">Care</span>{' '}
-                      <span className="text-red ">to</span>{' '}
-                      <span className="text-yellow-200 ">get</span>{' '}
+                      <span className="text-neonGreen">Care</span>{' '}
+                      <span className="text-purple ">to</span>{' '}
+                      <span className="text-purple ">get</span>{' '}
                       <span className="text-blue-300 ">to</span>{' '}
                       <span className="text-green-300 ">know</span>{' '}
-                      <span className="text-pink-400 ">me?</span>
+                      <span className="text-yellow-200 ">me?</span>
                     </h1>
                   </div>
-                  <div className="mt-5">
-                    <p className=" sm:w-100  text--small text-gray-400 leading-6 text-center">
-                      Pick a mood and get a song recommendation from my
-                      playlist!
+                  <div className="mt-2">
+                    <p className="modal-description text--normal text-gray-400 l text-center">
+                      Pick your current mood and get a song recommendation from
+                      my playlist!
                     </p>
                   </div>
                   <button
                     onClick={handleStart}
                     id="modal-btn"
-                    className="btn  mt-10 pointer-events-auto"
+                    className="btn  mt-2 pointer-events-auto"
                   >
                     {' '}
-                    Let's go!
+                    <p className="text--medium hover:text-neonGreen">
+                      {' '}
+                      Let's go!
+                    </p>
                   </button>
                   <a
                     onClick={props.closeModal}
                     className="mt-6 pointer-events-auto dark:text-white text-base leading-none focus:outline-none hover:border-purple focus:border-purple border-b border-transparent text-center text-gray-800"
                   >
-                    Nope...get me out!
+                    <p className="text--medium hover:text-pink">
+                      {' '}
+                      Nope...get me out!
+                    </p>
                   </a>
                   <button
                     onClick={props.closeModal}
@@ -93,10 +99,12 @@ const ModalContent = (props) => {
                 </div>
               </div>
             ) : (
-              <PlaylistSelection
-                restart={handleRestart}
-                closeModal={props.closeModal}
-              />
+              <div className="flex flex-col justify-start ite">
+                <PlaylistSelection
+                  restart={handleRestart}
+                  closeModal={props.closeModal}
+                />
+              </div>
             )}
           </div>
         </div>

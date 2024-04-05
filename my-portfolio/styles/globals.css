@@ -501,6 +501,17 @@ input:checked ~ .dot {
   .spotify-player {
     margin-top: 30%;
   }
+  .playlist-text {
+    font-size: 1.4em;
+  }
+
+  .modal-description {
+    font-size: 0em;
+  }
+  .care-to {
+    font-size: 1.2em;
+    margin: 0;
+  }
 }
 @media not all and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari-specific styles */
@@ -517,4 +528,7 @@ input:checked ~ .dot {
 
 .intro-text {
   font-family: Chromium;
+}
+.modal-description {
+  font-size: 0.8em;
 }
