@@ -64,8 +64,8 @@ const ContactForm = () => {
                 {' '}
                 I’d love to hear from you! Please use the form to contact me.
                 <br></br>
-                If you’d like to tell me what you think of my projects and
-                portfolio. You can toggle the form to leave feedback!
+                You can also toggle the form to leave your feedback on my
+                projects and portfolio.
               </p>
             )}
             <div className=" contact-buttons flex items-center justify-start gap-10">
