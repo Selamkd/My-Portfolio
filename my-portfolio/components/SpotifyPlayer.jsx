@@ -20,14 +20,18 @@ const SpotifyPlayer = (props) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const togglePlay = () => {
-    const iframe = document.getElementById('spotify-player');
-    if (isPlaying) {
-      iframe.contentWindow.postMessage('{"method":"pause"}', '*');
-    } else {
-      iframe.contentWindow.postMessage('{"method":"play"}', '*');
-    }
-    setIsPlaying(!isPlaying);
+  const playNextTrack = () => {
+    setCurrentTrackIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      return nextIndex < filteredTracks.length ? nextIndex : 0;
+    });
+  };
+
+  const playPreviousTrack = () => {
+    setCurrentTrackIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + shuffledTrackIds.length) % shuffledTrackIds.length
+    );
   };
 
   const shuffledTrackIds = shuffleArray(trackIds);
@@ -52,7 +56,7 @@ const SpotifyPlayer = (props) => {
           autoPlay
         ></iframe>
         <div className="controls flex w-full gap-9 justify-center items-center">
-          <button onClick={togglePlay}>
+          <button onClick={playPreviousTrack}>
             <GrPrevious
               className="text-white  hover:text-neonGreen"
               size={35}
@@ -64,7 +68,7 @@ const SpotifyPlayer = (props) => {
               size={30}
             />
           </button>
-          <button onClick={togglePlay}>
+          <button onClick={playNextTrack}>
             <GrNext className="text-white  hover:text-neonGreen  " size={30} />
           </button>
         </div>
