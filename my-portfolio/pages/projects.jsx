@@ -113,10 +113,14 @@ export default function Projects() {
                 an authentication feature to ensure the privacy of your journal
                 entries.
               </p>
-
               <div className="mt-3 ml-6 gap-2 ">
-                <button className="btn mr-3">Live</button>
-                <button className="btn ">Repo</button>
+                <Link href="https://attract-xi.vercel.app/">
+                  <button className="btn mr-3">Live</button>
+                </Link>
+                <Link href="https://github.com/Selamkd/Attract">
+                  {' '}
+                  <button className="btn ">Repo</button>
+                </Link>
               </div>
             </div>
             <div>
@@ -155,8 +159,12 @@ export default function Projects() {
               </p>
 
               <div className="mt-3 ml-6 gap-2 ">
-                <button className="btn mr-3">Live</button>
-                <button className="btn ">Repo</button>
+                <Link href="https://hack-a-fun.vercel.app/">
+                  <button className="btn mr-3">Live</button>
+                </Link>
+                <Link href="https://github.com/Alex321111/Final-Project-SoC">
+                  <button className="btn ">Repo</button>
+                </Link>
               </div>
             </div>
 
@@ -189,8 +197,12 @@ export default function Projects() {
               </p>
 
               <div className="mt-3 ml-6 gap-2 ">
-                <button className="btn mr-3">Live</button>
-                <button className="btn ">Repo</button>
+                <Link href="https://lol-champ-select.vercel.app/">
+                  <button className="btn mr-3">Live</button>
+                </Link>
+                <Link href="https://github.com/Selamkd/LOL-Champ-select">
+                  <button className="btn ">Repo</button>
+                </Link>
               </div>
             </div>
           </div>

@@ -133,8 +133,13 @@ const Projects = () => {
                   your journal entries.
                 </p>
                 <div className="mt-3 ">
-                  <button className="btn mr-2">Live</button>
-                  <button className="btn ">Repo</button>
+                  <Link href="https://attract-xi.vercel.app/">
+                    <button className="btn mr-2">Live</button>
+                  </Link>
+                  <Link href="https://github.com/Selamkd/Attract">
+                    {' '}
+                    <button className="btn ">Repo</button>
+                  </Link>
                 </div>
                 <div className="flex items-center justify-start ml-4 mt-5">
                   <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
@@ -202,8 +207,12 @@ const Projects = () => {
                   obtain champions data.
                 </p>
                 <div className="mt-3 ">
-                  <button className="btn mr-2">Live</button>
-                  <button className="btn ">Repo</button>
+                  <Link href="https://lol-champ-select.vercel.app/">
+                    <button className="btn mr-2">Live</button>
+                  </Link>
+                  <Link href="https://github.com/Selamkd/LOL-Champ-select">
+                    <button className="btn ">Repo</button>
+                  </Link>
                 </div>
                 <div className="flex items-center justify-start ml-4 mt-5">
                   <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
@@ -268,8 +277,12 @@ const Projects = () => {
                   project for SOC.
                 </p>
                 <div className="mt-3 ">
-                  <button className="btn mr-2">Live</button>
-                  <button className="btn ">Repo</button>
+                  <Link href="https://hack-a-fun.vercel.app/">
+                    <button className="btn mr-2">Live</button>
+                  </Link>
+                  <Link href="https://github.com/Alex321111/Final-Project-SoC">
+                    <button className="btn ">Repo</button>
+                  </Link>
                 </div>
                 <div className="flex items-center justify-start ml-4 mt-5">
                   <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
