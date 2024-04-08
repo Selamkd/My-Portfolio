@@ -23,7 +23,7 @@ export default function PlaylistSelection(props) {
         id="menu"
         className={`fixed left-0 top-0  flex flex-col  items-center justify-center pointer-events-none  w-full h-screen bg-gray-900 z-900  py-2 bg-opacity-80  sticky-0`}
       >
-        <div className=" bg-gray-800 bg-opacity-40 h-[60%] px-2 py-9 rounded-lg shadow-md w-120 relative">
+        <div className=" bg-gray-800 bg-opacity-40 h-[80%] px-2 py-9 rounded-lg shadow-md w-120 relative">
           <div role=" ">
             {!selectedMood ? (
               <h1 className="playlist-text text-3xl mb-6">
