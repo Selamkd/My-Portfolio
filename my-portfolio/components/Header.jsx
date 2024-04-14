@@ -84,7 +84,7 @@ const Header = () => {
 
             <TbMusicHeart
               onClick={showModal}
-              className="h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-purple"
+              className="h-5 w-5 text-gray-600 dark:text-gray-400 hover:text-purple"
             />
           </div>
         </nav>

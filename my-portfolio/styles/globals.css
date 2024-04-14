@@ -60,16 +60,6 @@ h1 {
   scroll-snap-align: start;
 }
 
-.tapered2 {
-  background-image: linear-gradient(
-    181deg,
-    #9bb9dd 0%,
-    #9bb9dd 50%,
-    transparent 54%,
-    transparent 100%
-  );
-}
-
 h2 {
   span {
     background-size: 100% 15%;
