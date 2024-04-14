@@ -156,6 +156,7 @@ const ContactForm = () => {
                         placeholder="Your Message"
                         onChange={handleChange}
                         class="
+                        overflow-y: scroll
                          w-full
                          rounded
                          py-3
@@ -245,6 +246,7 @@ const ContactForm = () => {
                       outline-none
                       focus-visible:shadow-none
                       focus:border-primary
+                      overflow-y: scroll
                       "
                       ></textarea>
                     </div>
