@@ -44,7 +44,7 @@ const Header = () => {
                 className="text-gray-600 dark:text-gray-400 hover:text-purple"
                 href="/projects"
               >
-                <VscCode size={23} />
+                <VscCode size={33} />
               </Link>
               <Link
                 className="text-gray-600 dark:text-gray-400 hover:text-purple"
@@ -84,7 +84,7 @@ const Header = () => {
 
             <TbMusicHeart
               onClick={showModal}
-              className="h-4 w-4 text-gray-600 dark:text-gray-400 hover:text-purple"
+              className="h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-purple"
             />
           </div>
         </nav>

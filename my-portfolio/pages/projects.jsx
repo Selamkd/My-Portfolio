@@ -190,10 +190,13 @@ export default function Projects() {
               />
               <p className="text--normal text-white">
                 {' '}
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                ChampSelect is a web app created for League of Legends fans who
+                want to find their next champion.The user answers a series of
+                questions that define their play style, preferred region, and
+                the role they wish to play. The app then suggests a champion
+                based on the user's responses. The application{' '}
+                <span className="ex4">utilises a custom REST API</span> to
+                obtain champions data.ß
               </p>
 
               <div className="mt-3 ml-6 gap-2 ">
