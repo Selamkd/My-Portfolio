@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { SlSocialSpotify } from 'react-icons/sl';
-import { ImCool } from 'react-icons/im';
-import { BsEmojiHeartEyes } from 'react-icons/bs';
 import PlaylistSelection from './PlaylistSelection.jsx';
 const ModalContent = (props) => {
   const [clicked, setClicked] = useState(false);
@@ -54,7 +52,7 @@ const ModalContent = (props) => {
                     className="btn  mt-2 pointer-events-auto"
                   >
                     {' '}
-                    <p className="text--medium hover:text-neonGreen">
+                    <p className="text-medium hover:text-neonGreen">
                       {' '}
                       Let's go!
                     </p>

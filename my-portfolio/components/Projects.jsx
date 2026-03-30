@@ -1,344 +1,288 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJs, faReact } from '@fortawesome/free-brands-svg-icons';
-import { motion } from 'framer-motion';
-import { SiNextdotjs } from 'react-icons/si';
+import { motion, AnimatePresence } from 'framer-motion';
+import { SiNextdotjs, SiPlaywright, SiJest } from 'react-icons/si';
 import { RiSupabaseLine } from 'react-icons/ri';
-import { SiPlaywright } from 'react-icons/si';
-import { FaCss3 } from 'react-icons/fa';
-import { FaHtml5 } from 'react-icons/fa';
+import { FaCss3, FaHtml5 } from 'react-icons/fa';
 import Icon from '../public/sparkle.png';
-import { SiJest } from 'react-icons/si';
+
+const TailwindIcon = () => (
+  <svg
+    className="w-8 h-8"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
+  </svg>
+);
+
+const ScrollArrow = ({ onClick }) => (
+  <motion.div
+    animate={{ y: [0, 8, 0] }}
+    transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+    onClick={onClick}
+    style={{
+      position: 'absolute',
+      bottom: '2rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      cursor: 'pointer',
+    }}
+  >
+    <svg className="arrows" style={{ position: 'static', margin: 0 }}>
+      <path strokeLinecap="round" className="a1" d="M0 0 L20 22 L40 0" />
+    </svg>
+  </motion.div>
+);
+
+
 const Projects = () => {
+  const router = useRouter();
   const [current, setCurrent] = useState(1);
-  const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [next, setNext] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const isTransitioning = useRef(false);
+  const scrollCooldown = useRef(false);
 
-  const handleSlideClick = (e, nextSlide) => {
-    e.preventDefault();
-    setNext(nextSlide);
-  };
-
-  const transitionSlides = () => {
-    if (!isMobile) {
-      if (current === next) return;
-
-      const preStartSlide = document.querySelector(
-        `.slider__warpper .flex__container[data-slide='${next}']`
-      );
-      const activeSlide = document.querySelector('.flex--active');
-
-      if (!preStartSlide || !activeSlide) return;
-
-      preStartSlide.classList.add('flex--preStart');
-      activeSlide.classList.add('animate--end');
-
-      setTimeout(() => {
-        preStartSlide.classList.remove('animate--start', 'flex--preStart');
-        preStartSlide.classList.add('flex--active');
-        activeSlide.classList.add('animate--start');
-        activeSlide.classList.remove('animate--end', 'flex--active');
-        setCurrent(next);
-      }, 800);
-    }
-  };
-
-  const handleScroll = () => {
-    let nextPage = current + 1;
-    if (nextPage > 3) nextPage = 1;
-    setNext(nextPage);
-    if (current === 3) {
-      location.href = '/contact';
-    }
-  };
-
+  
   useEffect(() => {
-    transitionSlides();
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [next]);
-
-  useEffect(() => {
-    const handleScroll = (e) => {
-      if (e.deltaY > 0) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    const handleResize = () => {
-      if (window.innerWidth <= 650) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
-    window.addEventListener('wheel', handleScroll);
+    const handleResize = () => setIsMobile(window.innerWidth <= 650);
     window.addEventListener('resize', handleResize);
     handleResize();
-    console.log(isMobile);
-
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const transitionSlides = useCallback((targetSlide) => {
+    if (isMobile || isTransitioning.current) return;
+
+    const preStartSlide = document.querySelector(
+      `.slider__warpper .flex__container[data-slide='${targetSlide}']`
+    );
+    const activeSlide = document.querySelector('.flex--active');
+
+    if (!preStartSlide || !activeSlide) return;
+
+    isTransitioning.current = true;
+    preStartSlide.classList.add('flex--preStart');
+    activeSlide.classList.add('animate--end');
+
+    setTimeout(() => {
+      preStartSlide.classList.remove('animate--start', 'flex--preStart');
+      preStartSlide.classList.add('flex--active');
+      activeSlide.classList.add('animate--start');
+      activeSlide.classList.remove('animate--end', 'flex--active');
+      setCurrent(targetSlide);
+      setNext(targetSlide);
+      isTransitioning.current = false;
+    }, 800);
+  }, [isMobile]);
+
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (scrollCooldown.current || isTransitioning.current) return;
+      if (e.deltaY <= 0) return;
+
+      scrollCooldown.current = true;
+      setTimeout(() => { scrollCooldown.current = false; }, 1000);
+
+      setCurrent((prev) => {
+        const nextSlide = prev + 1;
+        if (nextSlide > projects.length) {
+          router.push('/contact');
+          return prev;
+        }
+        setNext(nextSlide);
+        transitionSlides(nextSlide);
+        return prev; // actual update happens inside transitionSlides timeout
+      });
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: true });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [transitionSlides, router]);
+
+  
+  const handleSlideClick = (e, targetSlide) => {
+    e.preventDefault();
+    if (targetSlide === current || isTransitioning.current) return;
+    transitionSlides(targetSlide);
+  };
+
+  const handleArrowClick = () => {
+    const nextSlide = current + 1;
+    if (nextSlide > projects.length) {
+      router.push('/contact');
+      return;
+    }
+    transitionSlides(nextSlide);
+  };
+
+  if (isMobile) return null;
+
   return (
-    <>
-      {!isMobile && (
-        <div className="slider__warpper">
-          <div
-            className="flex__container flex--pikachu flex--active"
-            data-slide="1"
-          >
-            <div className="flex__item flex__item--left">
-              <div className="flex__content">
-                <div className="flex items-center justify-start">
-                  <h1 className="text--big ">Attract</h1>
-                  <Image
-                    src={Icon}
-                    className="align-center ml-10 mb-10"
-                    alt="arrow"
-                    width={60}
-                    height={40}
-                  />
-                </div>
-
-                <p className="text--normal">
-                  Attract is a comprehensive well-being app that was created for
-                  the{' '}
-                  <Link
-                    className=" underline hover:text-purple"
-                    href="https://m4kingspaces.org/the-making-good-prize/about-the-prize/#:~:text=Entries%20for%20the%20Making%20Good,the%20results%20around%20May%202024.&text=Judges%20will%20assess%20entries%20using,design%20that%20is%20clearly%20presented"
-                    target="_blank"
-                  >
-                    Making Good Prize{' '}
-                  </Link>{' '}
-                  submission. The app provides{' '}
-                  <span className="ex3">daily affirmations</span> to help you
-                  start your day on a positive note,{' '}
-                  <span className="ex5">customizable breathing exercises,</span>{' '}
-                  and a <span className="ex4">journaling feature</span> with
-                  daily prompts to encourage self-reflection. Additionally, the
-                  app has an authentication feature to ensure the privacy of
-                  your journal entries.
-                </p>
-                <div className="mt-3 ">
-                  <Link href="https://attract-xi.vercel.app/">
-                    <button className="btn mr-2">Live</button>
-                  </Link>
-                  <Link href="https://github.com/Selamkd/Attract">
-                    {' '}
-                    <button className="btn ">Repo</button>
-                  </Link>
-                </div>
-                <div className="flex items-center justify-start ml-4 mt-5">
-                  <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                  <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                  <svg
-                    class="w-10 h-10 text-4xl mr-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    id="tailwind-icon"
-                  >
-                    <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                  </svg>
-                  <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                  <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
-                </div>
-              </div>
-              {/* <p className="text__background">00</p> */}
-              <motion.div
-                animate={{ scale: 1, opacity: 1 }}
-                id="arrow-container"
-                className="flex justify-center  items-center"
-                onClick={handleScroll}
-              >
-                <Link
-                  href="
-      "
-                >
-                  <svg class="arrows">
-                    <path
-                      stroke-linecap="round"
-                      class="a1"
-                      d="M0 0 L20 22 L40 0"
-                    ></path>
-                  </svg>
-                </Link>
-              </motion.div>
-            </div>
-            <div className="flex__item flex__item--right"></div>
-          </div>
-          <div
-            className="flex__container flex--piplup animate--start"
-            data-slide="2"
-          >
-            <div className="flex__item flex__item--left">
-              <div className="flex__content">
-                <div className="flex items-center justify-start">
-                  <h1 className="text--big ">Champselect</h1>
-                  <Image
-                    src={Icon}
-                    className="align-center ml-10 mb-10"
-                    alt="arrow"
-                    width={60}
-                    height={40}
-                  />
-                </div>
-                <p className="text--normal">
-                  ChampSelect is a web app created for League of Legends fans
-                  who want to find their next champion.The user answers a series
-                  of questions that define their play style, preferred region,
-                  and the role they wish to play. The app then suggests a
-                  champion based on the user's responses. The application{' '}
-                  <span className="ex4">utilises a custom REST API</span> to
-                  obtain champions data.
-                </p>
-                <div className="mt-3 ">
-                  <Link href="https://lol-champ-select.vercel.app/">
-                    <button className="btn mr-2">Live</button>
-                  </Link>
-                  <Link href="https://github.com/Selamkd/LOL-Champ-select">
-                    <button className="btn ">Repo</button>
-                  </Link>
-                </div>
-                <div className="flex items-center justify-start ml-4 mt-5">
-                  <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                  <FaCss3 className="text-4xl mr-5 h-8 w-8" />
-                  <FaHtml5 className="text-4xl mr-5 h-8 w-8" />
-                  <SiJest className="text-4xl mr-5 h-8 w-8" />
-                  <SiPlaywright className="text-4xl mr-5 h-10 w-10" />
-                </div>
+    <div className="slider__warpper">
+      {projects.map((project, index) => (
+        <div
+          key={project.id}
+          className={`flex__container ${project.theme} ${index === 0 ? 'flex--active' : 'animate--start'}`}
+          data-slide={project.id}
+        >
+          <div className="flex__item flex__item--left">
+            <div className="flex__content">
+              <div className="flex items-center justify-start">
+                <h1 className="text--big">{project.title}</h1>
+                <Image
+                  src={Icon}
+                  className="ml-10 mb-10"
+                  alt=""
+                  width={60}
+                  height={40}
+                />
               </div>
 
-              <motion.div
-                animate={{ scale: 1, opacity: 1 }}
-                id="arrow-container"
-                className="flex justify-center  items-center"
-                onClick={handleScroll}
-              >
-                <Link
-                  href="/projects
-      "
-                >
-                  <svg class="arrows">
-                    <path
-                      stroke-linecap="round"
-                      class="a1"
-                      d="M0 0 L20 22 L40 0"
-                    ></path>
-                  </svg>
+              <p className="text--normal">{project.description}</p>
+
+              <div className="mt-3">
+                <Link href={project.live} target="_blank">
+                  <button className="btn mr-2">Live</button>
                 </Link>
-              </motion.div>
-            </div>
-            <div className="flex__item flex__item--right"></div>
-          </div>
-          <div
-            className="flex__container flex--blaziken animate--start"
-            data-slide="3"
-          >
-            <div className="flex__item flex__item--left">
-              <div className="flex__content">
-                <div className="flex items-center justify-start">
-                  <h1 className="text--big ">Hackafun</h1>
-                  <Image
-                    src={Icon}
-                    className="align-center ml-8 mb-10"
-                    alt="arrow"
-                    width={60}
-                    height={40}
-                  />
-                </div>
-                <p className="text--normal ">
-                  Hack-a-fun aims to support boot campers, graduates, and
-                  mentors to team up and work on a 4-week Hackathon project.
-                  Users can <span className="ex3">create a profile </span>and
-                  join monthly hackathons,
-                  <span className="ex4">participate in chat groups </span>, and{' '}
-                  <span>submit their projects</span> to get feedback from
-                  mentors. The main focus of the app is to
-                  <span className="ex5">
-                    {' '}
-                    promote teamwork rather than individual contributions.
-                  </span>{' '}
-                  This app was developed by myself and my teammates as our final
-                  project for SOC.
-                </p>
-                <div className="mt-3 ">
-                  <Link href="https://hack-a-fun.vercel.app/">
-                    <button className="btn mr-2">Live</button>
-                  </Link>
-                  <Link href="https://github.com/Alex321111/Final-Project-SoC">
-                    <button className="btn ">Repo</button>
-                  </Link>
-                </div>
-                <div className="flex items-center justify-start ml-4 mt-5">
-                  <FontAwesomeIcon icon={faJs} className="text-4xl mr-4 " />
-                  <FontAwesomeIcon icon={faReact} className="text-4xl mr-4 " />
-                  <svg
-                    class="w-10 h-10 text-4xl mr-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    id="tailwind-icon"
-                  >
-                    <path d="M11.8 5.7A4.8 4.8 0 0 0 7 10a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4 1c2-.7 2.9-3 3.1-4-1 1.4-2.4 2.2-4.3 1.2-1.2-.6-2.1-3.4-6-3.3Zm-5 6.3A4.8 4.8 0 0 0 2 16.2a3.4 3.4 0 0 1 2.7-1.7c1.7 0 3 2 3.8 2.6a5.7 5.7 0 0 0 5.4.9c2-.7 3-2.9 3.1-4-1 1.4-2.4 2.3-4.2 1.3-1.3-.7-2.2-3.4-6-3.3Z" />
-                  </svg>
-                  <SiNextdotjs className="text-4xl mr-5 h-8 w-8" />
-                  <RiSupabaseLine className="text-4xl mr-5 h-8 w-8" />
-                  <SiJest className="text-4xl mr-5 h-8 w-8" />
-                </div>
+                <Link href={project.repo} target="_blank">
+                  <button className="btn">Repo</button>
+                </Link>
               </div>
 
-              <motion.div
-                animate={{ scale: 1, opacity: 1 }}
-                id="arrow-container"
-                className="flex justify-center  items-center"
-                onClick={handleScroll}
-              >
-                <Link
-                  href="/projects
-      "
-                >
-                  <svg class="arrows">
-                    <path
-                      stroke-linecap="round"
-                      class="a1"
-                      d="M0 0 L20 22 L40 0"
-                    ></path>
-                  </svg>
-                </Link>
-              </motion.div>
+              {project.icons}
             </div>
-            <div className="flex__item flex__item--right"></div>
+
+            <ScrollArrow onClick={handleArrowClick} />
           </div>
-          {/* Additional slider content */}
-          <div className="slider__navi">
-            <a
-              href="#"
-              className={`slide-nav ${current === 1 ? 'active' : ''}`}
-              onClick={(e) => handleSlideClick(e, 1)}
-            >
-              pikachu
-            </a>
-            {/* Other slider navigation links */}
-          </div>
+
+          <div className="flex__item flex__item--right" />
         </div>
-      )}
-    </>
+      ))}
+
+ 
+      <div className="slider__navi">
+        {projects.map((project) => (
+          <a
+            key={project.id}
+            href="#"
+            className={`slide-nav ${current === project.id ? 'active' : ''}`}
+            onClick={(e) => handleSlideClick(e, project.id)}
+          >
+            {project.slug}
+          </a>
+        ))}
+      </div>
+    </div>
   );
 };
+
 export default Projects;
+
+const projects = [
+  {
+    id: 1,
+    slug: 'pikachu',
+    title: 'Attract',
+    theme: 'flex--pikachu',
+    description: (
+      <>
+        Attract is a comprehensive well-being app created for the{' '}
+        <Link
+          className="underline hover:text-purple"
+          href="https://m4kingspaces.org/the-making-good-prize/about-the-prize/"
+          target="_blank"
+        >
+          Making Good Prize
+        </Link>{' '}
+        submission. The app provides{' '}
+        <span className="ex3">daily affirmations</span> to help you start your
+        day on a positive note,{' '}
+        <span className="ex5">customizable breathing exercises,</span> and a{' '}
+        <span className="ex4">journaling feature</span> with daily prompts to
+        encourage self-reflection. Additionally, the app has an authentication
+        feature to ensure the privacy of your journal entries.
+      </>
+    ),
+    live: 'https://attract-xi.vercel.app/',
+    repo: 'https://github.com/Selamkd/Attract',
+    icons: (
+      <div className="flex items-center justify-start ml-4 mt-5 gap-4">
+        <FontAwesomeIcon icon={faJs} className="text-4xl" />
+        <FontAwesomeIcon icon={faReact} className="text-4xl" />
+        <TailwindIcon />
+        <SiNextdotjs className="h-8 w-8" />
+        <RiSupabaseLine className="h-8 w-8" />
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    slug: 'piplup',
+    title: 'Champselect',
+    theme: 'flex--piplup',
+    description: (
+      <>
+        ChampSelect is a web app created for League of Legends fans who want to
+        find their next champion. The user answers a series of questions that
+        define their play style, preferred region, and the role they wish to
+        play. The app then suggests a champion based on the user's responses.
+        The application{' '}
+        <span className="ex4">utilises a custom REST API</span> to obtain
+        champions data.
+      </>
+    ),
+    live: 'https://lol-champ-select.vercel.app/',
+    repo: 'https://github.com/Selamkd/LOL-Champ-select',
+    icons: (
+      <div className="flex items-center justify-start ml-4 mt-5 gap-4">
+        <FontAwesomeIcon icon={faJs} className="text-4xl" />
+        <FaCss3 className="h-8 w-8" />
+        <FaHtml5 className="h-8 w-8" />
+        <SiJest className="h-8 w-8" />
+        <SiPlaywright className="h-10 w-10" />
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    slug: 'blaziken',
+    title: 'Hackafun',
+    theme: 'flex--blaziken',
+    description: (
+      <>
+        Hack-a-fun aims to support boot campers, graduates, and mentors to team
+        up and work on a 4-week Hackathon project. Users can{' '}
+        <span className="ex3">create a profile</span> and join monthly
+        hackathons, <span className="ex4">participate in chat groups</span>, and{' '}
+        <span>submit their projects</span> to get feedback from mentors. The
+        main focus of the app is to{' '}
+        <span className="ex5">
+          promote teamwork rather than individual contributions.
+        </span>{' '}
+        This app was developed by myself and my teammates as our final project
+        for SOC.
+      </>
+    ),
+    live: 'https://hack-a-fun.vercel.app/',
+    repo: 'https://github.com/Alex321111/Final-Project-SoC',
+    icons: (
+      <div className="flex items-center justify-start ml-4 mt-5 gap-4">
+        <FontAwesomeIcon icon={faJs} className="text-4xl" />
+        <FontAwesomeIcon icon={faReact} className="text-4xl" />
+        <TailwindIcon />
+        <SiNextdotjs className="h-8 w-8" />
+        <RiSupabaseLine className="h-8 w-8" />
+        <SiJest className="h-8 w-8" />
+      </div>
+    ),
+  },
+];

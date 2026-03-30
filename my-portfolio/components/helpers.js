@@ -1,6 +1,6 @@
 export const getPositionAvatar = (scrolled) => {
   const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+
 
   if (scrolled) {
     if (windowWidth > 1500) {
@@ -20,7 +20,7 @@ export const getPositionAvatar = (scrolled) => {
 export const getPositionText = (scrolled) => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-  console.log(windowWidth, windowHeight);
+
 
   if (scrolled) {
     if (windowWidth > 1500) {
@@ -37,7 +37,7 @@ export const getPositionText = (scrolled) => {
       } else {
         return { x: '180px', y: '190px', scale: 0.8 };
       }
-      return { x: '180px', y: '190px', scale: 0.5 };
+  
     }
   } else {
     return { x: '180px', y: '190px', scale: 0.6 };

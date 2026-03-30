@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getAccessToken } from '../utils/Auth.js';
+import getAccessToken from '../utils/Auth.js';
 
 const Callback = () => {
   const router = useRouter();

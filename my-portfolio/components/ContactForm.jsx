@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
+import emailjs from 'emailjs-com';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import Github from '../public/Github.png';
 import Linkeden from '../public/Linkeden.png';
 import Mail from '../public/Mail.png';
-import Github from '../public/Github.png';
-import Link from 'next/link';
-import Image from 'next/image';
-import emailjs from 'emailjs-com';
-import React, { useState, useRef } from 'react';
 const ContactForm = () => {
   const [toggle, setToggle] = useState(false);
   let serviceId = 'portfolio-contact';
@@ -273,12 +272,7 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        {/* <Image
-          className="absolute bottom-0 right-0"
-          src={Spaceship}
-          width={240}
-          height={230}
-        /> */}
+      
       </section>
     </div>
   );

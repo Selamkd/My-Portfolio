@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import { MdSkipNext } from 'react-icons/md';
-import { MdOutlineSkipPrevious } from 'react-icons/md';
-import trackIds from '../db/playlist.json';
-import { RiArrowGoBackLine } from 'react-icons/ri';
-import { CiPlay1 } from 'react-icons/ci';
-import { GrNext } from 'react-icons/gr';
-import { GrPrevious } from 'react-icons/gr';
+import { useEffect, useState } from 'react';
+import { GrNext, GrPrevious } from 'react-icons/gr';
 import { MdOutlineRestartAlt } from 'react-icons/md';
-import { useEffect } from 'react';
+import trackIds from '../db/playlist.json';
 const SpotifyPlayer = (props) => {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);

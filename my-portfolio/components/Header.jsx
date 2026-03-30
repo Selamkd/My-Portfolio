@@ -1,95 +1,77 @@
-import Link from 'next/link';
-import { TbMusicHeart } from 'react-icons/tb';
-import { TbFileDownload } from 'react-icons/tb';
-import { useState } from 'react';
-import { ImCool } from 'react-icons/im';
-import { SlSocialSpotify } from 'react-icons/sl';
-import SpotifyModal from './SpotifyModal';
-import { MdKeyboardCommandKey } from 'react-icons/md';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
-import { VscCode } from 'react-icons/vsc';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { GrContact } from 'react-icons/gr';
+import { MdKeyboardCommandKey } from 'react-icons/md';
+import { TbMusicHeart } from 'react-icons/tb';
+import { VscCode } from 'react-icons/vsc';
+import SpotifyModal from './SpotifyModal';
+
+const navLinks = [
+  { href: '/',         label: 'Home',       icon: <MdKeyboardCommandKey /> },
+  { href: '/about',    label: 'About Me',   icon: <FontAwesomeIcon icon={faAddressCard} /> },
+  { href: '/projects', label: 'Projects',   icon: <VscCode size={22} /> },
+  { href: '/contact',  label: 'Contact Me', icon: <GrContact /> },
+];
+
 const Header = () => {
   const [modal, setModal] = useState(false);
-  const showModal = () => {
-    setModal(true);
-  };
+  const { pathname } = useRouter();
 
-  const closeModal = () => {
-    setModal(false);
-  };
+  const isActive = (href) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
+
   return (
     <>
-      {/* prompt to start the modal */}
-      <header className="top-0 text--small sm:top-4 rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
+      <header className="top-0 sm:top-4 rounded-none sm:rounded-full border-b sm:border dark:bg-blackish/30 border-gray-800/50 dark:border-gray-400/10 p-3 z-50 backdrop-blur-md w-full m-auto max-w-3xl flex justify-between items-center sticky">
         <nav className="w-full flex justify-around items-center">
           <div className="flex items-center space-x-8">
-            {/* Mobile navigation with icons */}
+
+            {/* Mobile: icon-only links */}
             <div className="flex items-center space-x-10 sm:hidden">
-              {' '}
-              <Link
-                className="text-gray-600 dark:text-gray-400 hover:text-purple"
-                href="/ "
-              >
-                <MdKeyboardCommandKey />
-              </Link>
-              <Link
-                className="text-gray-600 dark:text-gray-400 hover:text-purple"
-                href="/about"
-              >
-                <FontAwesomeIcon icon={faAddressCard} />
-              </Link>
-              <Link
-                className="text-gray-600 dark:text-gray-400 hover:text-purple"
-                href="/projects"
-              >
-                <VscCode size={33} />
-              </Link>
-              <Link
-                className="text-gray-600 dark:text-gray-400 hover:text-purple"
-                href="/contact"
-              >
-                <GrContact />
-              </Link>
+              {navLinks.map(({ href, label, icon }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  className={`transition-colors ${
+                    isActive(href)
+                      ? 'text-purple'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-purple'
+                  }`}
+                >
+                  {icon}
+                </Link>
+              ))}
             </div>
 
-            {/* Desktop navigation with text */}
-            <div id="links" className="hidden items-center sm:flex">
-              <Link
-                className="flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 dark:text-gray-400 font-medium px-3 py-2  w-fit"
-                href="/ "
-              >
-                Home
-              </Link>
-              <Link
-                className="flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 dark:text-gray-400 font-medium px-3 py-2  w-fit"
-                href="/about"
-              >
-                About Me
-              </Link>
-              <Link
-                className="flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 dark:text-gray-400 font-medium px-3 py-2  w-fit"
-                href="/projects"
-              >
-                Projects
-              </Link>
-              <Link
-                className="flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-white/5 text-gray-400 dark:text-gray-400 font-medium px-3 py-2  w-fit"
-                href="/contact"
-              >
-                Contact Me
-              </Link>
+            {/* Desktop: text links */}
+            <div className="hidden items-center sm:flex">
+              {navLinks.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-draplin text-[13px] tracking-[0.2px] leading-none cursor-pointer select-none font-medium px-3 py-2 w-fit ${
+                    isActive(href)
+                      ? 'text-purple bg-gray-100 dark:bg-white/5'
+                      : 'text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5'
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
 
             <TbMusicHeart
-              onClick={showModal}
-              className="h-5 w-5 text-gray-600 dark:text-gray-400 hover:text-purple"
+              onClick={() => setModal(true)}
+              className="h-5 w-5 cursor-pointer text-gray-600 dark:text-gray-400 hover:text-purple"
             />
           </div>
         </nav>
       </header>
-      <SpotifyModal modal={modal} closeModal={closeModal} />
+      <SpotifyModal modal={modal} closeModal={() => setModal(false)} />
     </>
   );
 };
