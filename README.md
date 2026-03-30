@@ -1,12 +1,8 @@
 # My Portfolio
 
-🌐 Welcome to my portfolio repository! This is where I showcase my projects, skills, and experiences.
+ Welcome to my portfolio! This is where I showcase my projects, skills, and experiences.
 
-### Portfolio Highlights
-- 🚀 Interactive and responsive design using React, Next.js, and Tailwind CSS.
-- 🎨 Creative projects demonstrating my front-end/back-end development and design abilities.
-- 📝 Project descriptions
-- Contact me form
+
 
 ### Technologies Used
 - React
